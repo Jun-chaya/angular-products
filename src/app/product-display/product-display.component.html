@@ -1,14 +1,43 @@
  <!-- JSON sin formatear-->
+<div id="fondo">
+  <h1>Products</h1>
+<div id="lista">
+<div *ngFor="let product of products" id="todo"  >
 
-<ul *ngFor="let product of products">
-<li>
- {{product.id}}
- {{product.title}}
- {{product.images}}
- <div *ngFor="let image of product.images">
-<img src="{{image}}" alt="{{product.title}}"/>
+ <img src="{{product.thumbnail}}" alt={{product.title}}>
+
+ <p id="productTitle" >{{product.title}}</p>
+
+ <p id="description">{{product.description}}</p>
+
+ <p id="category">Category : {{product.category}}</p>
+ <p id="brand">{{product.brand}}</p>
+ 
+ <p id="stars">{{numberToStars(product.rating)}}</p>
+ 
+ 
+
+ <p id="stock">Stock : {{product.stock}}</p>
+
+ 
+
+  <p id="oldPrice">{{product.price}}&euro;</p>
+ 
+  <p id="discount"> sale: {{product.discountPercentage}}% </p>
+ 
+  <p id="newPrice">{{truncate(product.price * ((100-product.discountPercentage)/100))}}&euro;</p>
+
 </div>
-</li>
-</ul>
+
+
+
+
+
+ <!-- <div *ngFor="let image of product.images">
+<img src="{{image}}" alt="{{product.title}}"/> 
+
+</div>-->
+</div>
+</div>
 
   
