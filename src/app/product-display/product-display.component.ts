@@ -18,6 +18,11 @@ export class ProductDisplayComponent implements OnInit {
       .add(() => console.log(this.products));
   }
 
+add(product: product): void {
+this.ProductService.addProduct(product).subscribe(product => {this.products.push(product)});
+}
+
+
   truncate(n1: number): number {
     return Math.floor(n1 * 100) / 100;
   }
@@ -46,5 +51,22 @@ export class ProductDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.goGetProducts();
+    let product1 = {
+      id: 1,
+      title: 'Product 1',
+      category: 'Category 1',
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fug",
+      price: 100,
+      discountPercentage: 0,
+      rating: 0,
+      stock: 100,
+      brand: 'Brand 1',
+      thumbnail: 'https://via.placeholder.com/150',
+      images: [
+        'https://via.placeholder.com/150',
+        'https://via.placeholder.com/150']
+    }
+    this.add(product1);
+
   }
 }

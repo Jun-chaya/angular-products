@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { allProduct } from './product';
+import { allProduct, product } from './product';
 
 import {
   HttpClient,
@@ -22,4 +22,9 @@ export class ProductService {
  /* getProduct(id: number): Observable<product> {
       return this.http.get<product>(`${this.productURL}/${id}`);
     }*/
+    
+  addProduct(product: product): Observable<product>{
+    return this.http.post<product>(`${this.productURL}`, product);
+  }
+
 }
