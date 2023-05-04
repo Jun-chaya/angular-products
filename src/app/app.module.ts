@@ -8,7 +8,6 @@ import { ProductService } from './product.service';
   declarations: [
     AppComponent,
     ProductDisplayComponent,
-   
   ],
   imports: [
     BrowserModule,

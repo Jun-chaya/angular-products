@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { product } from './product';
+import { allProduct } from './product';
+
 import {
   HttpClient,
   HttpHeaders,
@@ -11,16 +12,14 @@ import { catchError, map, tap} from 'rxjs/operators';
 @Injectable()
 export class ProductService {  
   private productURL = 'https://dummyjson.com/products';
+
   constructor(private http:HttpClient) {}
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
 
-  getProducts(): Observable<product[]>{
-    return this.http.get<product[]>(this.productURL).pipe(
-      
-      (tap(data => console.log('All ', JSON.stringify(data))))
-    );
-  }
+  getAllProducts(): Observable<allProduct>{
+    return this.http.get<allProduct>(this.productURL);}
+
+ /* getProduct(id: number): Observable<product> {
+      return this.http.get<product>(`${this.productURL}/${id}`);
+    }*/
 }

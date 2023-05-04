@@ -1,5 +1,14 @@
-<ul class="products">
-  <li *ngFor="let product of objectKeys(products)">
-    {{products}}
-  </li>
+ <!-- JSON sin formatear-->
+
+<ul *ngFor="let product of products">
+<li>
+ {{product.id}}
+ {{product.title}}
+ {{product.images}}
+ <div *ngFor="let image of product.images">
+<img src="{{image}}" alt="{{product.title}}"/>
+</div>
+</li>
 </ul>
+
+  
