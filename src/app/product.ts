@@ -5,7 +5,7 @@ export interface allProduct {
   limit?: number;
   }
 export interface product {
-    id: number;
+    id?: number;
     title: string;
     description: string;
     price: number;
@@ -16,4 +16,6 @@ export interface product {
     category: string;
     thumbnail: string;
     images: string[];
+    isDeleted?: boolean;
+    deletedOn?: Date;
 }

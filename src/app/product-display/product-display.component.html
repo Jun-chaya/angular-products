@@ -1,44 +1,103 @@
- <!-- JSON sin formatear-->
+<input
+  type="text"
+  name="idproduct"
+  id="product"
+  placeholder="product"
+  required="product"
+  [(ngModel)]="id"
+/>
+<h1>{{ log }}</h1>
+<button value="Añadir Objeto" (click)="anadeObjeto(id)">Añadir</button>
+<button value="Borrar Objeto" (click)="goDeleteProduct(id)">Borrar</button>
+
+<!-- <button value="Actualizar Objeto" (click)="goUpdateProduct(id)">Actualizar</button> -->
 <div id="fondo">
   <h1>Products</h1>
-<div id="lista">
-<div *ngFor="let product of products" id="todo"  >
-
- <img src="{{product.thumbnail}}" alt={{product.title}}>
-
- <p id="productTitle" >{{product.title}}</p>
-
- <p id="description">{{product.description}}</p>
-
- <p id="category">Category : {{product.category}}</p>
- <p id="brand">{{product.brand}}</p>
- 
- <p id="stars">{{numberToStars(product.rating)}}</p>
- 
- 
-
- <p id="stock">Stock : {{product.stock}}</p>
-
- 
-
-  <p id="oldPrice">{{product.price}}&euro;</p>
- 
-  <p id="discount"> sale: {{product.discountPercentage}}% </p>
- 
-  <p id="newPrice">{{truncate(product.price * ((100-product.discountPercentage)/100))}}&euro;</p>
-
-</div>
-
-
-
-
-
- <!-- <div *ngFor="let image of product.images">
-<img src="{{image}}" alt="{{product.title}}"/> 
-</div>-->
-
-
-</div>
-</div>
-
   
+  <div class="d-flex p-2 justify-content-between">
+    <div class="dropdown" class="d-flex justify-content-start">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="triggerId"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Filter by Category
+      </button>
+      <div class="dropdown-menu" aria-labelledby="triggerId">
+        <div *ngFor="let category of categories">
+          <a class="dropdown-item" (click)="goGetProductCategory(category)">{{
+            category
+          }}</a>
+        </div>
+      </div>
+  </div>
+
+    <div class="dropdown" class="d-flex justify-content-start">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="triggerId"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Filter by Price
+      </button>
+      <div class="dropdown-menu" aria-labelledby="triggerId">
+        <a class="dropdown-item" (click)="filterByPrice(0, 15)">
+          0&euro;-15&euro;</a
+        >
+        <a class="dropdown-item" (click)="filterByPrice(15, 30)">
+          15&euro;-30&euro;</a
+        >
+        <a class="dropdown-item" (click)="filterByPrice(30, 50)">
+          30&euro;-50&euro;</a
+        >
+        <a class="dropdown-item" (click)="filterByPrice(50, 100)">
+          50&euro;-100&euro;</a
+        >
+        <a class="dropdown-item" (click)="filterByPrice(100, 200)">
+          100&euro;-200&euro;</a
+        >
+        <a class="dropdown-item" (click)="filterByPrice(200, 9999999)">
+          200&euro;&plus;</a
+        >
+      </div>
+    </div>
+
+    <form class="d-flex ms-auto" role="search">
+      <input #searchBox class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+      <button class="btn btn-outline-success"  (click)="search(searchBox.value)">Search</button>
+    </form>
+  </div>
+
+
+  <div id="lista">
+    <a
+      routerLink="/products/{{ product.id }}"
+      *ngFor="let product of products"
+      id="todo"
+    >
+      <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
+
+      <p id="productTitle">{{ product?.title }}</p>
+
+      <!-- <p id="description">{{ product.description }}</p> -->
+
+      <p id="brand">{{ product.brand }}</p>
+
+      <p id="stars">{{ numberToStars(product.rating) }}</p>
+
+      <!-- <p id="stock">Stock : {{ product.stock }}</p> -->
+
+      <p id="oldPrice">{{ product.price }}&euro;</p>
+
+      <p id="discount">sale: {{ product.discountPercentage }}%</p>
+
+      <p id="newPrice">{{ aplicaDescuento(product) }}&euro;</p>
+    </a>
+  </div>
+</div>

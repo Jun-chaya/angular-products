@@ -1,0 +1,15 @@
+h5 {
+  mix-blend-mode: difference;
+}
+p {
+  mix-blend-mode: difference;
+
+  text-shadow: black 1px 1px;
+}
+div:not(.carousel-caption) {
+  background-color: #f2f2f2;
+  width: 500px;
+  height: 500px;
+  object-fit: scale-down;
+  border-radius: 4px;
+}
