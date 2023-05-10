@@ -1,3 +1,7 @@
 fieldset {
     padding: 2em;
 }
+
+textarea{
+    resize: none;
+}

@@ -8,23 +8,23 @@
  
 
    <label for="" class="form-label">Product ID</label>
-   <select #idProd multiple class="form-select form-select-lg" name="">
-      <option selected *ngFor="let product of products" (click)="productFromId(idProd.value)">{{product.id}}</option>
+   <select #idProd class="form-select form-select-lg" name="" (click)="productFromId(idProd.value)">
+      <option *ngFor="let product of products" value="{{product.id}}" (click)="productFromId(idProd.value)">{{product.id}}</option>
    </select>
 
    <label for="title" class="form-label">Product Title</label>
    <textarea class="form-control" name="title" id="title" rows="1" placeholder="{{product?.title}}"></textarea>
 
    <label for="description" class="form-label">Product Description</label>
-   <textarea class="form-control" name="description" id="description" rows="2"
+   <textarea class="form-control" name="description" id="description" rows="2" maxlength="200"
       placeholder="{{product?.description}}"></textarea>
 
    <label for="price" class="form-label">Price</label>
-   <textarea class="form-control" name="price" id="price" placeholder="{{product?.price}}" rows="1"></textarea>
+   <textarea class="form-control" name="price" id="price" placeholder="{{product?.price}}&euro;" rows="1"></textarea>
 
 
    <label for="discount" class="form-label">Discount</label>
-   <textarea class="form-control" name="discount" id="discount" rows="1" placeholder="{{product?.discountPercentage}}"></textarea>
+   <textarea class="form-control" name="discount" id="discount" rows="1"  placeholder="{{product?.discountPercentage}}&percnt;"></textarea>
 
 
    <label for="rating" class="form-label">Rating</label>
@@ -39,7 +39,12 @@
    
 
    <label for="category" class="form-label">category</label>
-   <textarea class="form-control" name="category" id="category" placeholder="{{product?.category}}" rows="1"></textarea>
+
+   <select class="form-select form-select-lg" name="" aria-label="Default select example">
+      <option value="" disabled selected hidden>{{product?.category}}</option>
+      <option  *ngFor="let category of categories">{{category}}</option>
+   </select>
+   
 
    <label for="thumbnail" class="form-label">thumbnail</label>
    <textarea class="form-control" name="thumbnail" id="thumbnail" placeholder="{{product?.thumbnail}}" rows="1"></textarea>
