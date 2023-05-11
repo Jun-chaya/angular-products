@@ -10,8 +10,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'search', component: ProductSearchComponent },
   { path: 'products', component: ProductDisplayComponent },
-  {path: 'products/:id', component: ProductDetailComponent },
-  { path: 'modify', component: ProductModifyComponent }
+  { path: 'products/id/:id', component: ProductDetailComponent },
+  { path: 'modify', component: ProductModifyComponent },
+  { path: 'products/1', redirectTo: '/products', pathMatch: 'full' },
+  { path: 'products/:page', component: ProductDisplayComponent },
 ];
 
 @NgModule({

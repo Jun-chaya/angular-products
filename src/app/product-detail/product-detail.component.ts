@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { allProduct, product } from '../product';
+import { allProduct, product } from '../model/product';
 import { ProductDisplayComponent } from '../product-display/product-display.component';
-import { ProductService } from '../product.service';
+import { ProductService } from '../product-service/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 

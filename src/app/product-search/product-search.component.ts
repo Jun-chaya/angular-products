@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
-import { allProduct, product } from '../product';
+import { ProductService } from '../product-service/product.service';
+import { allProduct, product } from '../model/product';
 import { RouterModule } from '@angular/router';
 import { Observable, Subject, Subscribable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';

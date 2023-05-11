@@ -1,61 +1,153 @@
-<input type="text" name="idproduct" id="product" placeholder="product" required="product" [(ngModel)]="id" />
-<h1>{{log}}</h1>
+<input
+  type="text"
+  name="idproduct"
+  id="product"
+  placeholder="product"
+  required="product"
+  [(ngModel)]="id"
+/>
+<h1>{{ log }}</h1>
 <button value="Añadir Objeto" (click)="anadeObjeto(id)">Añadir</button>
 <button value="Borrar Objeto" (click)="goDeleteProduct(id)">Borrar</button>
 <fieldset>
-   <form #productForm="ngForm">
-<div class="mb-3">
- 
 
-   <label for="" class="form-label">Product ID</label>
-   <select #idProd class="form-select form-select-lg" name="" (click)="productFromId(idProd.value)">
-      <option *ngFor="let product of products" value="{{product.id}}" (click)="productFromId(idProd.value)">{{product.id}}</option>
-   </select>
+    <div class="mb-3" class="form-group">
+      <label for="id" class="form-label">Product ID</label>
+      <select  class="form-control"
+        #idProd
+        class="form-select form-select-lg"
+        name="idProd"
+        name="idProd"
+        (click)="productFromId(idProd.value)"
+         (ngModel)="formProduct!.id"
+        >
+        <option
+          *ngFor="let product of totalProducts"
+          value="{{ product.id }}"
+          (click)="productFromId(idProd.value)"
+        >
+          {{ product.id }}
+        </option>
+      </select>
 
-   <label for="title" class="form-label">Product Title</label>
-   <textarea class="form-control" name="title" id="title" rows="1" placeholder="{{product?.title}}"></textarea>
+      <label for="title" class="form-label">Product Title</label>
+      <textarea
+        class="form-control"
+        name="title"
+        id="title"
+        rows="1"
+        placeholder="{{ product?.title }}"
+        ngModel></textarea>
 
-   <label for="description" class="form-label">Product Description</label>
-   <textarea class="form-control" name="description" id="description" rows="2" maxlength="200"
-      placeholder="{{product?.description}}"></textarea>
+      <label for="description" class="form-label">Product Description</label>
+      <textarea
+        class="form-control"
+        name="description"
+        id="description"
+        rows="2"
+        maxlength="200"
+        placeholder="{{ product?.description }}"
+        ngModel></textarea>
 
-   <label for="price" class="form-label">Price</label>
-   <textarea class="form-control" name="price" id="price" placeholder="{{product?.price}}&euro;" rows="1"></textarea>
+      <label for="price" class="form-label">Price</label>
+      <textarea
+        class="form-control"
+        name="price"
+        id="price"
+        placeholder="{{ product?.price }}&euro;"
+        rows="1"
+        ngModel></textarea>
 
+      <label for="discount" class="form-label">Discount</label>
+      <textarea
+        class="form-control"
+        name="discount"
+        id="discount"
+        rows="1"
+        placeholder="{{ product?.discountPercentage }}&percnt;"
+        ngModel></textarea>
 
-   <label for="discount" class="form-label">Discount</label>
-   <textarea class="form-control" name="discount" id="discount" rows="1"  placeholder="{{product?.discountPercentage}}&percnt;"></textarea>
+      <label for="rating" class="form-label">Rating</label>
+      <textarea
+        class="form-control"
+        name="rating"
+        id="rating"
+        rows="1"
+        placeholder="{{ product?.rating }}"
+        ngModel></textarea>
 
+      <label for="quantity" class="form-label">Quantity</label>
+      <textarea
+        class="form-control"
+        name="quantity"
+        id="quantity"
+        placeholder="{{ product?.stock }}"
+        rows="1"
+        ngModel></textarea>
 
-   <label for="rating" class="form-label">Rating</label>
-   <textarea class="form-control" name="rating" id="rating" rows="1"
-      placeholder="{{product?.rating}}"></textarea>
+      <label for="Brand" class="form-label">Brand</label>
+      <textarea
+        class="form-control"
+        name="Brand"
+        id="Brand"
+        placeholder="{{ product?.brand }}"
+        rows="1"
+        ngModel></textarea>
 
-   <label for="quantity" class="form-label">Quantity</label>
-   <textarea class="form-control" name="quantity" id="quantity" placeholder="{{product?.stock}}" rows="1"></textarea>
+      <label for="category" class="form-label">category</label>
 
-   <label for="Brand" class="form-label">Brand</label>
-   <textarea class="form-control" name="Brand" id="Brand" placeholder="{{product?.brand}}" rows="1"></textarea>
-   
+      <select
+        class="form-select form-select-lg"
+        name=""
+        aria-label="Default select example"
+        ngModel>
+        <option value="" disabled selected hidden>
+          {{ product?.category }}
+        </option>
+        <option *ngFor="let category of categories">{{ category }}</option>
+      </select>
 
-   <label for="category" class="form-label">category</label>
+      <label for="thumbnail" class="form-label">thumbnail</label>
+      <textarea
+        class="form-control"
+        name="thumbnail"
+        id="thumbnail"
+        placeholder="{{ product?.thumbnail }}"
+        rows="1"
+        ngModel></textarea>
 
-   <select class="form-select form-select-lg" name="" aria-label="Default select example">
-      <option value="" disabled selected hidden>{{product?.category}}</option>
-      <option  *ngFor="let category of categories">{{category}}</option>
-   </select>
-   
+      <label
+        for="images"
+        class="form-label"
+        *ngFor="let image of product?.images"
+        >Images</label
+      >
+      <textarea
+        class="form-control"
+        name="images"
+        id="images"
+        placeholder="{{ product?.images }}"
+        rows="2"
+        ngModel>{{ product?.images }}&nbsp;</textarea
+      >
 
-   <label for="thumbnail" class="form-label">thumbnail</label>
-   <textarea class="form-control" name="thumbnail" id="thumbnail" placeholder="{{product?.thumbnail}}" rows="1"></textarea>
+      <button type="submit" class="btn btn-primary" >
+        add
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="deleteProductForm()"
+      >
+        delete
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="updateProductForm()"
+      >
+        update
+      </button>
+    </div>
 
-   <label for="images" class="form-label" *ngFor="let image of product?.images">Images</label>
-   <textarea class="form-control" name="images" id="images" placeholder="{{product?.images}}"rows="2">{{product?.images}}&nbsp;</textarea>
-  
-   <button type="submit" class="btn btn-primary" (click)="addProductForm()">add</button>
-   <button type="submit" class="btn btn-primary" (click)="deleteProductForm()">delete</button>
-   <button type="submit" class="btn btn-primary" (click)="updateProductForm()">update</button>
-   
-</div>
-</form>
 </fieldset>

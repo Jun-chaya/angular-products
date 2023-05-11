@@ -4,6 +4,7 @@ export interface allProduct {
   skip?: number;
   limit?: number;
   }
+
 export interface product {
     id?: number;
     title: string;

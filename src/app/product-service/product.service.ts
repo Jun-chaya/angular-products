@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { allProduct, product } from './product';
+import { allProduct, product } from '../model/product';
 
 import {
   HttpClient,
@@ -59,4 +59,7 @@ export class ProductService {
   productsByCategory(category: string): Observable<allProduct> {
     return this.http.get<allProduct>(`${this.productURL}/category/${category}`);
   }
+  
+  productsByParameters(numItems : number, skipNumber: number): Observable<allProduct> {
+  return this.http.get<allProduct>(`${this.productURL}?limit=${numItems}&skip=${skipNumber}`);}
 }
