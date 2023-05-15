@@ -6,6 +6,7 @@ import { ProductDisplayComponent } from './product-display/product-display.compo
 import { ProductModifyComponent } from './product-modify/product-modify.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductModifyMainComponent } from './product-modify-main/product-modify-main.component';
+import { UserTableComponent } from './user-table/user-table.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'modify', component: ProductModifyMainComponent },
   { path: 'products/1', redirectTo: '/products', pathMatch: 'full' },
   { path: 'products/:page', component: ProductDisplayComponent },
+  {path: 'users', component: UserTableComponent },
 ];
 
 @NgModule({

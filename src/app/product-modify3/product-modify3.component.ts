@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../product-service/product.service';
-import { product } from '../model/product';
+import { allProduct, product } from '../model/product';
 import { ProductDisplayComponent } from '../product-display/product-display.component';
 
 @Component({
@@ -10,6 +10,7 @@ import { ProductDisplayComponent } from '../product-display/product-display.comp
 })
 export class ProductModify3Component extends ProductDisplayComponent {
   product: product | undefined;
+  
 
   productFromId(id: string | undefined) {
     if (id == undefined) {
@@ -21,14 +22,14 @@ export class ProductModify3Component extends ProductDisplayComponent {
     });
     console.log(this.product);
   }
-  
+
   goDeleteProduct(id?: number): void {
     if (id == undefined) {
       return;
     }
     const exists = this.products.some((p) => p.id == id);
 
-    if (id > 100 && exists) {
+    if (id < 100 && exists) {
       const index = this.products.findIndex((p) => p.id === id);
       this.products.splice(index, 1);
       console.log(

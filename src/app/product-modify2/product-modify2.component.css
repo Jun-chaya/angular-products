@@ -1,8 +1,57 @@
+* {
+  display: inline-block;
+}
+
+label {
+  padding: 7px;
+}
+
 fieldset {
-    padding: 2em;
+  padding: 2em;
 }
 
-textarea{
-    resize: none;
+textarea {
+  resize: none;
 }
 
+#id {
+  width: 15%;
+}
+
+#title {
+  width: 20%;
+}
+
+#description {
+  margin-bottom: 15px;
+}
+
+#price {
+  width: 5%;
+}
+
+#discount {
+  width: 5%;
+}
+
+#rating {
+  width: 5%;
+}
+
+#quantity {
+  width: 5%;
+}
+
+#Brand {
+  width: 10%;
+}
+#thumbnail {
+    margin-bottom: 15px;
+ }
+#category {
+  width: 20%;
+}
+
+#images {
+    margin-bottom: 15px;
+}

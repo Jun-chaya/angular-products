@@ -5,21 +5,13 @@
   background-color: #262626;
   font-family: "Raleway", sans-serif;
 }
-main #lista {
+
+#lista {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
-
-/* #Category{
-  display: flex;
-  flex-direction: column-reverse;
-  border: solid 1px;
-  border-color: red;
-  background-color: #404040;
-}
-*/
 
 #categoryFilter {
   padding: 15px;
@@ -30,14 +22,14 @@ main #lista {
   cursor: pointer;
 }
 #categoryFilter:hover {
-  transition: ease-in-out 0.5s;
+  transition: 0.5s;
   background-color: #f2f2f2;
   color: #262626;
 }
+
 a:not(#categoryFilter) {
   text-decoration: none;
 }
-
 
 #fondo h1 {
   color: #f2f2f2;
@@ -45,6 +37,7 @@ a:not(#categoryFilter) {
 }
 
 #todo {
+  
   padding: 1em;
   background-color: #404040;
   color: #f2f2f2;
@@ -52,10 +45,10 @@ a:not(#categoryFilter) {
   margin-bottom: 5em;
   margin-right: 2em;
 }
-
 #todo:hover {
   border: solid 2px #d9bc66;
 }
+
 img {
   background-color: #f2f2f2;
   width: 500px;
@@ -83,12 +76,14 @@ img {
   border-radius: 4px;
   width: inherit;
 }
+
 #oldPrice {
   font-size: 50pt;
   color: red;
   text-decoration: line-through #f2f2f2;
   text-align: center;
 }
+
 #discount {
   text-align: center;
   border-radius: 50px;
@@ -105,52 +100,31 @@ img {
   font-family: "Vina Sans", cursive;
   font-size: 85pt;
 }
+
 #stars {
   text-align: center;
   font-size: 50pt;
   color: goldenrod;
 }
 
-#category {
-  font-size: 30pt;
-  text-align: center;
-}
-
-#brand {
-  font-size: 25pt;
-  text-align: center;
-}
-
+#category,
+#brand,
 #stock {
   font-size: 30pt;
   text-align: center;
 }
 
-.pagination > li > a
-{
-    background-color: #5a5a5a;
-    color: #f2f2f2;
-}
-
+.pagination > li > a,
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
-.pagination > li > span:hover
-{
-    color: #5a5a5a;
-    background-color: #eee;
-    border-color: #ddd;
+.pagination > li > span:hover {
+  background-color: #5a5a5a;
+  color: #f2f2f2;
 }
-
-.pagination > .active > a
-{
-    color: white;
-    background-color: #5A4181 !Important;
-    border: solid 1px #5A4181 !Important;
-}
-
-.pagination > .active > a:hover
-{
-    background-color: #5A4181 !Important;
-    border: solid 1px #5A4181;
+.pagination > .active > a,
+.pagination > .active > a:hover {
+  color: white;
+  background-color: #5a4181 !important;
+  border: solid 1px #5a4181 !important;
 }

@@ -12,6 +12,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductModify2Component } from './product-modify2/product-modify2.component';
 import { ProductModify3Component } from './product-modify3/product-modify3.component';
 import { ProductModifyMainComponent } from './product-modify-main/product-modify-main.component';
+import { UserTableComponent } from './user-table/user-table.component';
+import { UserSearchComponent } from './user-search/user-search.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { ProductModifyMainComponent } from './product-modify-main/product-modify
     ProductModify2Component,
     ProductModify3Component,
     ProductModifyMainComponent,
+    UserTableComponent,
+    UserSearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -94,8 +94,8 @@ export class ProductDisplayComponent implements OnInit {
       this.ProductService.getAllProducts().subscribe(
         (allProducts) => (this.temp = allProducts.products)
       );
-      
-      setTimeout;
+
+   
       this.products = this.temp.filter(
         (p) =>
           this.aplicaDescuento(p) <= priceMax &&

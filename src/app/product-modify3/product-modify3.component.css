@@ -1,3 +1,4 @@
+
 fieldset {
     padding: 2em;
 }
@@ -6,3 +7,10 @@ textarea{
     resize: none;
 }
 
+input{
+    width: 5%;
+}
+
+button {
+    margin-top: 0.5em;
+}
