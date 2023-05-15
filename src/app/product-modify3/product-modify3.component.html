@@ -1,0 +1,9 @@
+<fieldset><select class="form-control" #idProd class="form-select form-select-lg" name="idProd" name="idProd"
+        (click)="productFromId(idProd.value)">
+        <option *ngFor="let product of totalProducts" value="{{ product.id }}" (click)="productFromId(idProd.value)">
+            {{ product.id }}
+        </option>
+
+    </select>
+    <button value="Borrar Objeto" (click)="goDeleteProduct(product?.id)">Borrar</button>
+</fieldset>

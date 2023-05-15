@@ -5,13 +5,14 @@ import { ProductSearchComponent } from './product-search/product-search.componen
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { ProductModifyComponent } from './product-modify/product-modify.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductModifyMainComponent } from './product-modify-main/product-modify-main.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'search', component: ProductSearchComponent },
   { path: 'products', component: ProductDisplayComponent },
   { path: 'products/id/:id', component: ProductDetailComponent },
-  { path: 'modify', component: ProductModifyComponent },
+  { path: 'modify', component: ProductModifyMainComponent },
   { path: 'products/1', redirectTo: '/products', pathMatch: 'full' },
   { path: 'products/:page', component: ProductDisplayComponent },
 ];

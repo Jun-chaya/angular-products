@@ -1,0 +1,57 @@
+<fieldset>
+
+    <div class="mb-3" class="form-group">
+        <label for="id" class="form-label">Product ID</label>
+        <input type="number" class="form-control" id="id" name="id" min="101" max="101">
+<br>
+        <label for="title" class="form-label">Product Title</label>
+        <textarea class="form-control" name="title" id="title" rows="1" placeholder="{{ product?.title }}"
+            ngModel></textarea>
+
+        <label for="description" class="form-label">Product Description</label>
+        <textarea class="form-control" name="description" id="description" rows="2" maxlength="200"
+            placeholder="{{ product?.description }}" ngModel></textarea>
+
+        <label for="price" class="form-label">Price</label>
+        <textarea class="form-control" name="price" id="price" placeholder="{{ product?.price }}&euro;" rows="1"
+            ngModel></textarea>
+
+        <label for="discount" class="form-label">Discount</label>
+        <textarea class="form-control" name="discount" id="discount" rows="1"
+            placeholder="{{ product?.discountPercentage }}&percnt;" ngModel></textarea>
+
+        <label for="rating" class="form-label">Rating</label>
+        <textarea class="form-control" name="rating" id="rating" rows="1" placeholder="{{ product?.rating }}"
+            ngModel></textarea>
+
+        <label for="quantity" class="form-label">Quantity</label>
+        <textarea class="form-control" name="quantity" id="quantity" placeholder="{{ product?.stock }}" rows="1"
+            ngModel></textarea>
+
+        <label for="Brand" class="form-label">Brand</label>
+        <textarea class="form-control" name="Brand" id="Brand" placeholder="{{ product?.brand }}" rows="1"
+            ngModel></textarea>
+
+        <label for="category" class="form-label">category</label>
+
+        <select class="form-select form-select-lg" name="" aria-label="Default select example" ngModel>
+            <option value="" disabled selected hidden>
+                {{ product?.category }}
+            </option>
+            <option *ngFor="let category of categories">{{ category }}</option>
+        </select>
+
+        <label for="thumbnail" class="form-label">thumbnail</label>
+        <textarea class="form-control" name="thumbnail" id="thumbnail" placeholder="{{ product?.thumbnail }}" rows="1"
+            ngModel></textarea>
+
+            Images
+        <label for="images" class="form-label" *ngFor="let image of product?.images"></label>
+        
+            <textarea class="form-control" name="images" id="images" placeholder="{{ product?.images }}" rows="2"
+                ngModel>{{ product?.images }}&nbsp;</textarea>
+
+    </div>
+
+</fieldset>
+<button value="Añadir Objeto" (click)="anadeObjeto(id)">Añadir</button>
