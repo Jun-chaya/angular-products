@@ -1,48 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Vina+Sans&display=swap");
 
-
-main{
+main {
   font-family: "Raleway", sans-serif;
-  background-color: #f2f2f2
-  }
+  background-color: #f2f2f2;
+}
 
-div{
+div {
   background-color: #f2f2f2;
   width: 600px;
   height: 600px;
   object-fit: scale-down;
   border-radius: 4px;
 }
-h5{
+h5 {
   padding: 10px;
-  background-color: #262626  ;
+  background-color: #262626;
   border-radius: 5px;
   font-size: 5em;
   text-transform: capitalize;
   color: #f2f2f2;
-  width:  fit-content;
+  width: fit-content;
   text-align: center;
-
 }
-h6 span{
+h6 span {
   padding: 10px;
-  background-color:  #BF9788 ;
+  background-color: #bf9788;
   border-radius: 5px;
   color: #f2f2f2;
   width: fit-content;
 
   padding-bottom: 10px;
 }
-h6{
+h6 {
   padding: 10px;
 }
 
-p{
+p {
   font-size: 1.5em;
   padding: 60px;
   border-radius: 5px;
   background-color: #262626;
   color: #f2f2f2;
- word-wrap: break-word; 
- width: fit-content;
+  word-wrap: break-word;
+  width: fit-content;
 }

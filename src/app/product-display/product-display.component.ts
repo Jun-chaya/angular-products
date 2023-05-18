@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product-service/product.service';
+import { ProductService } from '../services/product-service/product.service';
 import { allProduct, product } from '../model/product';
-import { RouterModule } from '@angular/router';
-import { auditTime, timestamp } from 'rxjs';
 import { ProductSearchComponent } from '../product-search/product-search.component';
 import { __await } from 'tslib';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-product-display',
   templateUrl: './product-display.component.html',
@@ -15,11 +14,12 @@ export class ProductDisplayComponent implements OnInit {
   id: number = 0;
   log: string = '';
 
+  isDataLoaded$: Subscription;
   public totalProducts: product[] = [];
   public products: product[] = [];
   public categories: string[] = [];
   public temp: product[] = [];
-  private itemsPage: number = 10;
+  private itemsPage: number = 12;
 
   constructor(
     protected ProductService: ProductService,
@@ -29,29 +29,73 @@ export class ProductDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.goGetProducts();
     this.goGetCategories();
-    this.goGetProductsByParameters();
+    this.goGetProductsPaginated();
+    this.goGetProductsForSearch();
+  }
+
+  private goGetProductsForSearch() {
+    this.isDataLoaded$ = this.ProductService.getAllProducts().subscribe({
+      next: (allProducts) => (this.temp = allProducts.products),
+      error: (err) => console.error('Error in goGetProducts'),
+      complete: () => console.log('Completed goGetProductsForSearch'),
+    });
   }
 
   goGetProducts(): void {
-    try {
-      this.ProductService.getAllProducts().subscribe(
-        (allProducts) => (this.totalProducts = allProducts.products)
-      );
-    } catch (error) {
-      console.log("Couldn't fetch products");
-    }
+    this.isDataLoaded$ = this.ProductService.getAllProducts().subscribe({
+      next: (allProducts) => (this.totalProducts = allProducts.products),
+      error: (err) => console.error('Error in goGetProducts'),
+      complete: () => console.log('Completed goGetProducts'),
+    });
   }
 
   goGetCategories(): void {
-    try {
-      this.ProductService.getCategories().subscribe((categories) => {
-        this.categories = categories;
-      });
-    } catch (error) {
-      console.log("Couldn't fetch categories");
-    }
+    this.isDataLoaded$ = this.ProductService.getCategories().subscribe({
+      next: (categories) => (this.categories = categories),
+      error: (err) => console.error('Error in getCategories' + err),
+      complete: () => console.log('Completed getCategories'),
+    });
   }
 
+  goGetProductsPaginated() {
+    const pageNum = Number(this.route.snapshot.paramMap.get('page'));
+    const numItems = this.itemsPage;
+    const skipNumber = (pageNum - 1) * 10;
+
+    this.isDataLoaded$ = this.ProductService.productsPaginated(numItems, skipNumber).subscribe({
+      next: (allProducts) => (this.products = allProducts.products),
+      error: (err) => console.error('Error in getPaginated' + err),
+      complete: () => console.log('Completed goGetProductsPaginated'),
+    });
+  }
+
+  goGetProductCategory(category: string) {
+    this.isDataLoaded$ = this.ProductService.productsByCategory(category).subscribe({
+      next: (allProducts) => (this.products = allProducts.products),
+      error: (err) => console.error('Error in goGetProductCategory' + err),
+      complete: () => console.log('Completed goGetProductCategory'),
+    });
+  }
+
+  search(term: string) {
+    let productSearch = new ProductSearchComponent(this.ProductService);
+    this.isDataLoaded$ = productSearch.search(term).subscribe({
+      next: (allProducts) => (this.products = allProducts.products),
+      error: (err) => console.error('Error in Search', err),
+      complete: () => console.log('Completed Search'),
+    });
+  }
+
+  filterByPrice(priceMin: number, priceMax: number) {
+   
+      this.products = this.temp.filter(
+        (p) =>
+          this.aplicaDescuento(p) <= priceMax &&
+          this.aplicaDescuento(p) >= priceMin
+      );
+   
+  }
+  
   aplicaDescuento(product: product): number {
     var n1 = product.price * ((100 - product.discountPercentage) / 100);
     return Math.floor(n1 * 100) / 100;
@@ -77,52 +121,5 @@ export class ProductDisplayComponent implements OnInit {
     }
 
     return stars;
-  }
-
-  goGetProductCategory(category: string) {
-    try {
-      this.ProductService.productsByCategory(category).subscribe(
-        (allProducts) => (this.products = allProducts.products)
-      );
-    } catch (error) {
-      console.log("Couldn't fetch products in ", category, ' category');
-    }
-  }
-
-  filterByPrice(priceMin: number, priceMax: number) {
-    try {
-      this.ProductService.getAllProducts().subscribe(
-        (allProducts) => (this.temp = allProducts.products)
-      );
-
-   
-      this.products = this.temp.filter(
-        (p) =>
-          this.aplicaDescuento(p) <= priceMax &&
-          this.aplicaDescuento(p) >= priceMin
-      );
-    } catch (error) {
-      console.log("No objects in that price point or, couldn't fetch them");
-    }
-  }
-
-  search(term: string) {
-    let productSearch = new ProductSearchComponent(this.ProductService);
-    productSearch
-      .search(term)
-      .subscribe((allProducts) => (this.products = allProducts.products));
-  }
-
-  goGetProductsByParameters() {
-    try {
-      const pageNum = Number(this.route.snapshot.paramMap.get('page'));
-      const numItems = this.itemsPage;
-      const skipNumber = (pageNum - 1) * 10;
-      this.ProductService.productsByParameters(numItems, skipNumber).subscribe(
-        (allProducts) => (this.products = allProducts.products)
-      );
-    } catch {
-      console.log("Couldn't fetch products by parameters");
-    }
   }
 }

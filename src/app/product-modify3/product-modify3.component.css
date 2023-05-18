@@ -1,16 +1,4 @@
-
-fieldset {
-    padding: 2em;
-}
-
-textarea{
-    resize: none;
-}
-
-input{
-    width: 5%;
-}
-
-button {
-    margin-top: 0.5em;
+main {
+    padding: 3rem;
+    background-color: #f2f2f2;
 }

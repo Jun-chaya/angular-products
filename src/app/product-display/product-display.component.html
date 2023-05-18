@@ -1,89 +1,93 @@
 <main id="fondo">
   <h1>Products</h1>
+  <mat-spinner *ngIf="isDataLoaded$ && !isDataLoaded$.closed"></mat-spinner>
+
+  <div *ngIf="isDataLoaded$ && isDataLoaded$.closed">
 
 
-  <nav class="d-flex p-2 justify-content-between">
-    <div class="dropdown d-flex justify-content-start">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Filter by Category
-      </button>
-      <div class="dropdown-menu" aria-labelledby="triggerId">
-        <div *ngFor="let category of categories">
-          <a class="dropdown-item" (click)="goGetProductCategory(category)">{{
-            category
-            }}</a>
+
+    <nav class="d-flex p-2 justify-content-between">
+      <div class="dropdown d-flex justify-content-start">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Filter by Category
+        </button>
+        <div class="dropdown-menu" aria-labelledby="triggerId">
+          <div *ngFor="let category of categories">
+            <a class="dropdown-item" (click)="goGetProductCategory(category)">{{
+              category
+              }}</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="dropdown d-flex justify-content-start">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Filter by Price
-      </button>
-      <div class="dropdown-menu" aria-labelledby="triggerId">
-        <a class="dropdown-item" (click)="filterByPrice(0, 15)">
-          0&euro;-15&euro;</a>
-        <a class="dropdown-item" (click)="filterByPrice(15, 30)">
-          15&euro;-30&euro;</a>
-        <a class="dropdown-item" (click)="filterByPrice(30, 50)">
-          30&euro;-50&euro;</a>
-        <a class="dropdown-item" (click)="filterByPrice(50, 100)">
-          50&euro;-100&euro;</a>
-        <a class="dropdown-item" (click)="filterByPrice(100, 200)">
-          100&euro;-200&euro;</a>
-        <a class="dropdown-item" (click)="filterByPrice(200, 9999999)">
-          200&euro;&plus;</a>
+      <div class="dropdown d-flex justify-content-start">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Filter by Price
+        </button>
+        <div class="dropdown-menu" aria-labelledby="triggerId">
+          <a class="dropdown-item" (click)="filterByPrice(0, 15)">
+            0&euro;-15&euro;</a>
+          <a class="dropdown-item" (click)="filterByPrice(15, 30)">
+            15&euro;-30&euro;</a>
+          <a class="dropdown-item" (click)="filterByPrice(30, 50)">
+            30&euro;-50&euro;</a>
+          <a class="dropdown-item" (click)="filterByPrice(50, 100)">
+            50&euro;-100&euro;</a>
+          <a class="dropdown-item" (click)="filterByPrice(100, 200)">
+            100&euro;-200&euro;</a>
+          <a class="dropdown-item" (click)="filterByPrice(200, 9999999)">
+            200&euro;&plus;</a>
+        </div>
       </div>
-    </div>
-    <button name="Reset" class="btn btn-primary" (click)="this.goGetProductsByParameters()">Clear Filters</button>
+      <button name="Reset" class="btn btn-primary" (click)="goGetProductsPaginated()">Clear Filters</button>
 
-    <form class="d-flex ms-auto" role="search">
-      <input #searchBox class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-      <button class="btn btn-outline-success" (click)="search(searchBox.value)">
-        Search
-      </button>
-    </form>
-  </nav>
-
-
-  <section id="lista">
-    <a routerLink="/products/id/{{ product.id }}" *ngFor="let product of products" id="todo">
-      <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
-
-      <p id="productTitle">{{ product?.title }}</p>
-
-      <p id="brand">{{ product.brand }}</p>
-
-      <p id="stars">{{ numberToStars(product.rating) }}</p>
-
-      <p id="oldPrice">{{ product.price }}&euro;</p>
-
-      <p id="discount">sale: {{ product.discountPercentage }}%</p>
-
-      <p id="newPrice">{{ aplicaDescuento(product) }}&euro;</p>
-    </a>
-  </section>
-
-
-  <footer>
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center pagination-lg">
-        <li class="page-item" aria-current="page">
-          <a class="page-link" href="/products/">1</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="/products/2">2</a></li>
-        <li class="page-item"><a class="page-link" href="/products/3">3</a></li>
-        <li class="page-item"><a class="page-link" href="/products/4">4</a></li>
-        <li class="page-item"><a class="page-link" href="/products/5">5</a></li>
-        <li class="page-item"><a class="page-link" href="/products/6">6</a></li>
-        <li class="page-item"><a class="page-link" href="/products/7">7</a></li>
-        <li class="page-item"><a class="page-link" href="/products/8">8</a></li>
-        <li class="page-item"><a class="page-link" href="/products/9">9</a></li>
-        <li class="page-item"><a class="page-link" href="/products/10">10</a></li>
-      </ul>
+      <form class="d-flex ms-auto" role="search">
+        <input #searchBox class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" (click)="search(searchBox.value)">
+          Search
+        </button>
+      </form>
     </nav>
-  </footer>
 
+
+    <section id="lista">
+
+      <div class="card" *ngFor="let product of products" id="todo">
+        <img class="card-img-top" src="{{ product.thumbnail }}" alt="{{ product.title }}" />
+        <div class="card-body">
+          <p id="productTitle" class="card-text">{{ product?.title | titlecase}}</p>
+
+
+
+          <p id="stars" class="card-text">{{ numberToStars(product.rating) }}</p>
+
+
+
+          <p id="discount" class="card-text">{{ product.discountPercentage }}% off</p>
+          <p id="oldPrice" class="card-text">{{ product.price }}&euro;</p>
+          <p id="newPrice" class="card-text"> {{ aplicaDescuento(product) }}&euro;</p>
+          <a routerLink="/products/id/{{ product.id }}" class="button">Link</a>
+        </div>
+      </div>
+
+
+
+    </section>
+
+
+    <footer>
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center pagination-lg">
+          <li class="page-item" *ngFor="let product of totalProducts  ; let i = index ">
+            <div *ngIf="i<=(totalProducts.length*3.6666)/12">
+              <a class="page-link" href="/products/{{i+1}}">{{i+1}}</a>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+    </footer>
+  </div>
 </main>

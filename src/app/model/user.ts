@@ -7,15 +7,15 @@ export interface allUser {
 
 export interface User {
   id: number;
-  firstName: string;
-  lastName: string;
-  maidenName: string;
-  age: number;
-  gender: string;
-  email: string;
-  phone: string;
-  username: string;
-  password: string;
+  firstName?: string;
+  lastName?: string;
+  maidenName?: string;
+  age?: number;
+  gender?: string;
+  email?: string;
+  phone?: string;
+  username?: string;
+  password?: string;
   birthDate?: Date;
   image?: string;
   bloodGroup?: string;
@@ -65,4 +65,6 @@ export interface User {
   ein?: string;
   ssn?: string;
   userAgent?: string;
+  isDeleted?: boolean;
+  deletedOn?: String;
 }
