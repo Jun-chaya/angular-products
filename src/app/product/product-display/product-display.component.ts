@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product-service/product.service';
-import { allProduct, product } from '../model/product';
+import { ProductService } from '../../services/product-service/product.service';
+import { allProduct, product } from '../../model/product';
 import { ProductSearchComponent } from '../product-search/product-search.component';
 import { __await } from 'tslib';
 import { ActivatedRoute } from '@angular/router';
@@ -27,10 +27,15 @@ export class ProductDisplayComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.goGetProducts();
     this.goGetCategories();
-    this.goGetProductsPaginated();
     this.goGetProductsForSearch();
+    if (this.route.snapshot.fragment!) {
+      const category = this.route.snapshot.fragment!;
+      this.goGetProductCategory(category);
+    } else {
+      this.goGetProducts();
+      this.goGetProductsPaginated();
+    }
   }
 
   private goGetProductsForSearch() {
@@ -62,7 +67,10 @@ export class ProductDisplayComponent implements OnInit {
     const numItems = this.itemsPage;
     const skipNumber = (pageNum - 1) * 10;
 
-    this.isDataLoaded$ = this.ProductService.productsPaginated(numItems, skipNumber).subscribe({
+    this.isDataLoaded$ = this.ProductService.productsPaginated(
+      numItems,
+      skipNumber
+    ).subscribe({
       next: (allProducts) => (this.products = allProducts.products),
       error: (err) => console.error('Error in getPaginated' + err),
       complete: () => console.log('Completed goGetProductsPaginated'),
@@ -70,7 +78,9 @@ export class ProductDisplayComponent implements OnInit {
   }
 
   goGetProductCategory(category: string) {
-    this.isDataLoaded$ = this.ProductService.productsByCategory(category).subscribe({
+    this.isDataLoaded$ = this.ProductService.productsByCategory(
+      category
+    ).subscribe({
       next: (allProducts) => (this.products = allProducts.products),
       error: (err) => console.error('Error in goGetProductCategory' + err),
       complete: () => console.log('Completed goGetProductCategory'),
@@ -87,15 +97,13 @@ export class ProductDisplayComponent implements OnInit {
   }
 
   filterByPrice(priceMin: number, priceMax: number) {
-   
-      this.products = this.temp.filter(
-        (p) =>
-          this.aplicaDescuento(p) <= priceMax &&
-          this.aplicaDescuento(p) >= priceMin
-      );
-   
+    this.products = this.temp.filter(
+      (p) =>
+        this.aplicaDescuento(p) <= priceMax &&
+        this.aplicaDescuento(p) >= priceMin
+    );
   }
-  
+
   aplicaDescuento(product: product): number {
     var n1 = product.price * ((100 - product.discountPercentage) / 100);
     return Math.floor(n1 * 100) / 100;

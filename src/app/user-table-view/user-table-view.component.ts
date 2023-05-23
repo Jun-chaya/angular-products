@@ -32,9 +32,11 @@ export class UserTableViewComponent implements OnInit {
     protected UserService: UserService,
     private _snackBar: MatSnackBar
   ) {
-    this.isDataLoaded$ = this.UserService.GetAllUsers().subscribe((allUsers) => {
-      this.users.push(...allUsers.users);
-    });
+    this.isDataLoaded$ = this.UserService.GetAllUsers().subscribe(
+      (allUsers) => {
+        this.users.push(...allUsers.users);
+      }
+    );
 
     for (let i = 3; i < 11; i++) {
       var p = i * 10;

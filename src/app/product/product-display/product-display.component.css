@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Vina+Sans&display=swap");
+/* *{
+  border:solid 1px red;
+} */
 
 #fondo {
-  padding: 3em;
-  background-color: #262626;
+  background-color: #f2f2f2;
+
   font-family: "Raleway", sans-serif;
 }
-#fondo h1 {
-  color: #f2f2f2;
-  font-size: 5em;
-}
+
 
 mat-spinner {
   margin: 0 auto;
@@ -35,7 +35,7 @@ img {
 }
 
 #oldPrice {
-  font-size: 3rem;
+  font-size: 2rem;
   color: rgba(169, 180, 190, 0.781);
   text-decoration: line-through;
 }
@@ -44,20 +44,36 @@ img {
   text-align: center;
   border-radius: 50px;
   padding: 5x 5px;
-  background-color: red;
-  color : whitesmoke;
+  background-color: #D93636;
+  color: whitesmoke;
 }
 
 #newPrice {
   font-size: 3rem;
- 
 }
 #stars {
   font-size: 2rem;
   text-align: center;
   color: goldenrod;
 }
-
+a{
+  text-decoration: none;
+}
+a:hover{
+  outline: 1px #A61C1C solid;
+}
+#triggerId{
+  background-color: #f2f2f2;
+   color:#262626;
+}
+.dropdown-menu {
+  background-color: #f2f2f2;
+  color:#262626;
+}
+#reset{
+  background-color: #590209;
+  border: solid 1px #590209;
+}
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -71,12 +87,19 @@ a.button {
 }
 
 #productTitle {
-  vertical-align: middle;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 6.5vh;
   font-size: 2em;
-  max-height: 175px;
+min-height: 19vh;
+max-height: 25vh;
   text-align: center;
   text-shadow: #262626 1px 1px 1pxpx;
 }
+
 #categoryFilter {
   padding: 15px;
   margin-left: 1em;
@@ -92,13 +115,6 @@ a.button {
   color: #262626;
 }
 
-
-
-
-
-
-
-
 .pagination > li > a,
 .pagination > li > a:focus,
 .pagination > li > a:hover,
@@ -113,46 +129,3 @@ a.button {
   background-color: #5a4181 !important;
   border: solid 1px #5a4181 !important;
 }
-
-/*
-
-
-
-
-
-
-
-#todo {
-  padding: 1em;
-  background-color: #404040;
-  color: #f2f2f2;
-  border-radius: 5px;
-  margin-bottom: 5em;
-  margin-right: 2em;
-}
-#todo:hover {
-  border: solid 2px #d9bc66;
-}
-
-
-
-
-
-
-#discount:hover {
-  background-color: #bf9460;
-}
-
-
-
-
-
-#category,
-#brand,
-#stock {
-  font-size: 30pt;
-  text-align: center;
-}
-
-
-*/

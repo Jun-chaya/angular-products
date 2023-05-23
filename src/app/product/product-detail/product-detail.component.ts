@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { allProduct, product } from '../model/product';
+import { allProduct, product } from '../../model/product';
 import { ProductDisplayComponent } from '../product-display/product-display.component';
-import { ProductService } from '../services/product-service/product.service';
+import { ProductService } from '../../services/product-service/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent{
   product: product | undefined;
   numImages: number | undefined;
   
@@ -30,5 +30,9 @@ export class ProductDetailComponent {
     this.ProductService.getProduct(id).subscribe(
       (product) => (this.product = product)
     );
+  }
+  aplicaDescuento(product: product): number {
+    var n1 = product.price * ((100 - product.discountPercentage) / 100);
+    return Math.floor(n1 * 100) / 100;
   }
 }

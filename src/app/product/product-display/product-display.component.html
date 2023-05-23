@@ -1,10 +1,8 @@
-<main id="fondo">
-  <h1>Products</h1>
+<main id="fondo" >
+  
   <mat-spinner *ngIf="isDataLoaded$ && !isDataLoaded$.closed"></mat-spinner>
 
   <div *ngIf="isDataLoaded$ && isDataLoaded$.closed">
-
-
 
     <nav class="d-flex p-2 justify-content-between">
       <div class="dropdown d-flex justify-content-start">
@@ -14,7 +12,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="triggerId">
           <div *ngFor="let category of categories">
-            <a class="dropdown-item" (click)="goGetProductCategory(category)">{{
+            <a class="dropdown-item" routerLink="/products" fragment="{{category}}" (click)="goGetProductCategory(category)">{{
               category
               }}</a>
           </div>
@@ -41,7 +39,7 @@
             200&euro;&plus;</a>
         </div>
       </div>
-      <button name="Reset" class="btn btn-primary" (click)="goGetProductsPaginated()">Clear Filters</button>
+      <button name="Reset" class="btn btn-primary" id="reset" (click)="goGetProductsPaginated()">Clear Filters</button>
 
       <form class="d-flex ms-auto" role="search">
         <input #searchBox class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -54,11 +52,12 @@
 
     <section id="lista">
 
-      <div class="card" *ngFor="let product of products" id="todo">
+      <a class="card" *ngFor="let product of products" id="todo"  routerLink="/products/id/{{ product.id }}">
         <img class="card-img-top" src="{{ product.thumbnail }}" alt="{{ product.title }}" />
         <div class="card-body">
-          <p id="productTitle" class="card-text">{{ product?.title | titlecase}}</p>
-
+        <div id="productTitle">
+          <p  id="title" class="card-text align-middle"> {{ product?.title | titlecase}}</p>
+        </div>
 
 
           <p id="stars" class="card-text">{{ numberToStars(product.rating) }}</p>
@@ -70,7 +69,7 @@
           <p id="newPrice" class="card-text"> {{ aplicaDescuento(product) }}&euro;</p>
           <a routerLink="/products/id/{{ product.id }}" class="button">Details</a>
         </div>
-      </div>
+      </a>
 
 
 

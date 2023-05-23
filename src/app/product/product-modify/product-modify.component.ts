@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductDisplayComponent } from '../product-display/product-display.component';
-import { ProductService } from '../services/product-service/product.service';
-import { product } from '../model/product';
+import { ProductService } from '../../services/product-service/product.service';
+import { product } from '../../model/product';
 import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-product-modify',

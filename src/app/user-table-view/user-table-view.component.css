@@ -1,6 +1,7 @@
 
 .container .row:not(:last-child){
   padding: 15px;
+  padding-top: 30px;
   margin-bottom: 2em;
   border : solid 1px gray;
 }
@@ -10,6 +11,7 @@
 
 #row1 button {
   padding: 15px;
+  
 }
 #row2 mat-form-field {
   width: 100%;

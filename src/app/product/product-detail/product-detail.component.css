@@ -24,7 +24,7 @@ h5 {
   text-align: center;
 }
 h6{
-  background-color: #bf9788;
+  background-color: #262626;
   border-radius: 5px;
   color: #f2f2f2;
   width: fit-content;
@@ -33,7 +33,7 @@ h6{
   text-transform: uppercase;
 }
 
-p {
+p #description{
   font-size: 1.5em;
   padding: 60px;
   border-radius: 5px;
@@ -41,4 +41,22 @@ p {
   color: #262626;
   word-wrap: break-word;
   width: fit-content;
+}
+
+#oldPrice {
+  font-size: 3rem;
+  color: rgba(169, 180, 190, 0.781);
+  text-decoration: line-through;
+}
+
+#discount {
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #D93636;
+  color: #f2f2f2;
+}
+
+#newPrice {
+  font-size: 3rem;
 }

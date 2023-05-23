@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product-service/product.service';
-import { allProduct, product } from '../model/product';
+import { ProductService } from '../../services/product-service/product.service';
+import { allProduct, product } from '../../model/product';
 import { RouterModule } from '@angular/router';
 import { Observable, Subject, Subscribable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Pipe, PipeTransform } from '@angular/core';
+import { ProductLandingPageComponent } from '../product-landing-page/product-landing-page.component';
 
 @Component({
   selector: 'app-product-search',

@@ -1,0 +1,53 @@
+<main>
+    <img class="resize" src="https://placehold.co/1400x200">
+    <section>
+
+        <h1> Welcome! &lt; User &gt;</h1>
+        <h2>Handpicked categories based on your interests</h2>
+        <div class="container-fluid justify-content-center">
+
+            <div class="row" id="rowReverse">
+                <div class="col justify-content-" *ngFor="let category of categories | slice:0:4">
+
+                    <div class="card">
+                        <img class="card-img-top" src="https://placehold.co/250x250" alt="Title" title="hover text">
+                        <a class="img-text" routerLink="/products" fragment="{{category}}"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">{{category | titlecase}}</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col justify-content-" *ngFor="let category of categories| slice:4:8 ">
+                    <div class="card">
+                        <img class="card-img-top" src="https://placehold.co/250x250" alt="Title" title="hover text">
+                        <a class="img-text" routerLink="/products" fragment="{{category}}"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">{{category | titlecase}}</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col justify-content-" *ngFor="let category of categories| slice:8:12 ">
+                    <div class="card">
+                        <img class="card-img-top" src="https://placehold.co/250x250" alt="Title" title="hover text">
+                        <a class="img-text" routerLink="/products" fragment="{{category}}"></a>
+                        <div class="card-body">
+                            <h4 class="card-title">{{category | titlecase}}</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
