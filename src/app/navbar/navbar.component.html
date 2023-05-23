@@ -1,0 +1,28 @@
+<nav class="navbar sticky-top navbar-expand-lg bg-body-secondary" [attr.data-bs-theme]="myTheme">
+    <a class="navbar-brand" href="#">Brand name</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse"
+        aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+    <div class="navbar-collapse collapse" id="collapse">
+        <ul class="navbar-nav nav-tabs" id="navId" role="tablist">
+
+
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/products" aria-current="page">Products</a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/modify">Modify</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/users">Users</a>
+            </li>
+
+
+        </ul>
+        
+    </div>
+<button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" (click)="onSwitch()" autocomplete="off">Button</button>
+</nav>

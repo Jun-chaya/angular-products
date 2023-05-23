@@ -7,12 +7,5 @@ import { ProductDisplayComponent } from '../product-display/product-display.comp
   styleUrls: ['./product-landing-page.component.css']
 })
 export class ProductLandingPageComponent extends ProductDisplayComponent{
-  myTheme: string = "light";
 
-  onSwitch() {
-    if (this.myTheme === "light")
-      this.myTheme = "dark";
-    else
-      this.myTheme = "light";
-  }
 }

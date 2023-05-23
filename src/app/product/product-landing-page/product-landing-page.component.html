@@ -1,18 +1,18 @@
-<main>
+<main class="bg-body" [attr.data-bs-theme]="myTheme">
     <img class="resize" src="https://placehold.co/1400x200">
     <section>
 
-        <h1> Welcome! &lt; User &gt;</h1>
-        <h2>Handpicked categories based on your interests</h2>
+        <h1 class="text-body"> Welcome! &lt; User &gt;</h1>
+        <h2 class="text-body">Handpicked categories based on your interests</h2>
         <div class="container-fluid justify-content-center">
 
             <div class="row" id="rowReverse">
                 <div class="col justify-content-" *ngFor="let category of categories | slice:0:4">
 
-                    <div class="card">
+                    <div class="card  bg-body-secondary">
                         <img class="card-img-top" src="https://placehold.co/250x250" alt="Title" title="hover text">
                         <a class="img-text" routerLink="/products" fragment="{{category}}"></a>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title">{{category | titlecase}}</h4>
 
                         </div>
@@ -23,10 +23,10 @@
 
             <div class="row">
                 <div class="col justify-content-" *ngFor="let category of categories| slice:4:8 ">
-                    <div class="card">
+                    <div class="card bg-body-secondary">
                         <img class="card-img-top" src="https://placehold.co/250x250" alt="Title" title="hover text">
-                        <a class="img-text" routerLink="/products" fragment="{{category}}"></a>
-                        <div class="card-body">
+                        <a class="img-text text-body-emphasis" routerLink="/products" fragment="{{category}}"></a>
+                        <div class="card-body text-center">
                             <h4 class="card-title">{{category | titlecase}}</h4>
 
                         </div>
@@ -36,10 +36,10 @@
 
             <div class="row">
                 <div class="col justify-content-" *ngFor="let category of categories| slice:8:12 ">
-                    <div class="card">
+                    <div class="card bg-body-secondary">
                         <img class="card-img-top" src="https://placehold.co/250x250" alt="Title" title="hover text">
                         <a class="img-text" routerLink="/products" fragment="{{category}}"></a>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title">{{category | titlecase}}</h4>
 
                         </div>
@@ -48,6 +48,7 @@
             </div>
 
         </div>
+
     </section>
 
 </main>

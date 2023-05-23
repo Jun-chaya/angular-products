@@ -2,13 +2,11 @@
 
 main {
   font-family: "Raleway", sans-serif;
-  background-color: #f2f2f2;
+
   padding-bottom: 106px;
 }
 
-
 div {
-  background-color: #f2f2f2;
   width: 30rem;
   height: 30rem;
   object-fit: contain;
@@ -19,33 +17,31 @@ h5 {
   border-radius: 5px;
   font-size: 4em;
   text-transform: capitalize;
-  color: #262626;
+
   width: fit-content;
   text-align: center;
 }
-h6{
-  background-color: #262626;
+h6 {
   border-radius: 5px;
-  color: #f2f2f2;
+
   width: fit-content;
   padding: 0.5em;
   font-size: 1.5em;
   text-transform: uppercase;
 }
 
-p #description{
+p #description {
   font-size: 1.5em;
   padding: 60px;
   border-radius: 5px;
-  background-color: #f2f2f2;
-  color: #262626;
+
   word-wrap: break-word;
   width: fit-content;
 }
 
 #oldPrice {
   font-size: 3rem;
-  color: rgba(169, 180, 190, 0.781);
+
   text-decoration: line-through;
 }
 
@@ -53,8 +49,7 @@ p #description{
   text-align: center;
   border-radius: 5px;
   padding: 15px;
-  background-color: #D93636;
-  color: #f2f2f2;
+  background-color: #d93636;
 }
 
 #newPrice {

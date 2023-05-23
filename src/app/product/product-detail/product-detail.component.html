@@ -1,4 +1,4 @@
-<main class="d-flex  justify-content-start">
+<main class="d-flex  justify-content-start bg-body" [attr.data-bs-theme]="myTheme">
       <aside>
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
                   <ol class="carousel-indicators">
@@ -34,13 +34,14 @@
 
       </aside>
 
-      <div class="d-flex justify-content-start flex-column align-items-center">
-            <h5>{{product?.title}}</h5>
-            <h6><span>{{product?.brand}}</span></h6>
-            <p id="description">{{product?.description}}</p>
-            <p id="oldPrice">{{product?.price}}</p>
-            <p id="discount">{{product?.discountPercentage}}</p>
-            <p id="newPrice">{{aplicaDescuento(product!)}}<p>
+      <div class="d-flex justify-content-start flex-column align-items-center ">
+            <h5 class="text-body-emphasis">{{product?.title}}</h5>
+            <h6 class="text-body"><span>{{product?.brand}}</span></h6>
+            <p id="description" class="text-body">{{product?.description}}</p>
+            <p id="oldPrice" class="text-body-tertiary" >{{product?.price}} &euro;</p>
+            <p id="discount" class="text-body-emphasis">{{product?.discountPercentage}} &percnt;</p>
+            <p id="newPrice" class="text-body-emphasis">{{aplicaDescuento(product!)}} &euro;
+            <p>
       </div>
 
 

@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Vina+Sans&display=swap");
-/* *{
-  border:solid 1px red;
-} */
+
 
 #fondo {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
 
   font-family: "Raleway", sans-serif;
 }
-
 
 mat-spinner {
   margin: 0 auto;
@@ -17,7 +14,7 @@ mat-spinner {
 .card {
   text-align: center;
   width: 18rem;
-  background-color: #dfdfdf;
+  /* background-color: #dfdfdf; */
   margin: 5px;
   font-family: Raleway, sans-serif;
 }
@@ -27,7 +24,7 @@ mat-spinner {
   justify-content: center;
 }
 img {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   height: 60%;
   max-height: 13em;
   object-fit: contain;
@@ -44,8 +41,8 @@ img {
   text-align: center;
   border-radius: 50px;
   padding: 5x 5px;
-  background-color: #D93636;
-  color: whitesmoke;
+  background-color: #d93636;
+  /* color: whitesmoke; */
 }
 
 #newPrice {
@@ -54,78 +51,59 @@ img {
 #stars {
   font-size: 2rem;
   text-align: center;
-  color: goldenrod;
+  /* color: goldenrod; */
 }
-a{
+a {
   text-decoration: none;
 }
-a:hover{
-  outline: 1px #A61C1C solid;
-}
-#triggerId{
-  background-color: #f2f2f2;
-   color:#262626;
-}
-.dropdown-menu {
-  background-color: #f2f2f2;
-  color:#262626;
-}
-#reset{
-  background-color: #590209;
-  border: solid 1px #590209;
-}
+
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
 
   text-decoration: none;
-  color: #f2f2f2;
+
   border-radius: 3px;
   padding: 2px 20px;
-  background-color: #262626;
 }
 
 #productTitle {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 6.5vh;
   font-size: 2em;
-min-height: 19vh;
-max-height: 25vh;
+  min-height: 19vh;
+  max-height: 25vh;
   text-align: center;
-  text-shadow: #262626 1px 1px 1pxpx;
 }
 
 #categoryFilter {
   padding: 15px;
   margin-left: 1em;
   border-radius: 4px;
-  background-color: #404040;
-  color: #f2f2f2;
+
   cursor: pointer;
 }
 
 #categoryFilter:hover {
   transition: 0.5s;
-  background-color: #f2f2f2;
-  color: #262626;
 }
-
+ul{
+  margin-bottom: 0;
+}
 .pagination > li > a,
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
 .pagination > li > span:hover {
   background-color: #5a5a5a;
-  color: #f2f2f2;
 }
 .pagination > .active > a,
 .pagination > .active > a:hover {
-  color: white;
   background-color: #5a4181 !important;
   border: solid 1px #5a4181 !important;
 }

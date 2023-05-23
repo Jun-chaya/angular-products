@@ -5,6 +5,7 @@ import { ProductSearchComponent } from '../product-search/product-search.compone
 import { __await } from 'tslib';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DarkModeService } from 'src/app/services/dark-mode/dark-mode.service';
 @Component({
   selector: 'app-product-display',
   templateUrl: './product-display.component.html',
@@ -20,10 +21,12 @@ export class ProductDisplayComponent implements OnInit {
   public categories: string[] = [];
   public temp: product[] = [];
   private itemsPage: number = 12;
+  myTheme: string;
 
   constructor(
     protected ProductService: ProductService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private DarkModeService: DarkModeService
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +38,24 @@ export class ProductDisplayComponent implements OnInit {
     } else {
       this.goGetProducts();
       this.goGetProductsPaginated();
+    }
+
+    if (
+      this.DarkModeService.getTheme().subscribe(
+        (theme) => (this.myTheme = theme)
+      )
+    ) {
+      this.DarkModeService.setTheme('dark');
+
+      this.DarkModeService.getTheme().subscribe(
+        (data) => (this.myTheme = data)
+      );
+    } else {
+      this.DarkModeService.setTheme('light');
+
+      this.DarkModeService.getTheme().subscribe(
+        (data) => (this.myTheme = data)
+      );
     }
   }
 

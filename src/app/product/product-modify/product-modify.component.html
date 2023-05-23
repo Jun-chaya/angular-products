@@ -1,13 +1,13 @@
-<main class="container">
+<main class="container bg-body" [attr.data-bs-theme]="myTheme">
 
   <div class="mb-3" class="form-group">
     <div class="row">
       <div class="col">
-        <label for="id" class="form-label">Product ID</label>
+        <label for="id" class="form-label text-body-emphasis">Product ID</label>
 
         <div *ngIf="isUpdate;else update">
           <input #idProd type="number" value="{{ product?.id }}" (change)="productFromId(idProd.valueAsNumber)"
-            class="form-control" id="id" name="id" min="1" max="{{totalProducts.length}}" (ngModel)="formProduct!.id">
+            class="form-control " id="id" name="id" min="1" max="{{totalProducts.length}}" (ngModel)="formProduct!.id">
         </div>
         <ng-template #update>
           <input #idProd type="number" value="{{ product?.id }}" placeholder="101" (change)="productFromId(idProd.valueAsNumber)"
@@ -15,46 +15,46 @@
         </ng-template>
       </div>
       <div class="col">
-        <label for="title" class="form-label">Product Title</label>
+        <label for="title" class="form-label text-body-emphasis">Product Title</label>
         <input type="text" class="form-control" name="title" id="title" rows="1" value="{{ product?.title }}" ngModel>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="description" class="form-label">Product Description</label>
+        <label for="description" class="form-label text-body-emphasis">Product Description</label>
         <input type="text" class="form-control" name="description" id="description" rows="2" maxlength="200"
           value="{{ product?.description }}" ngModel>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="price" class="form-label">Price</label>
+        <label for="price" class="form-label text-body-emphasis">Price</label>
         <input type="text" class="form-control" name="price" id="price" value="{{ product?.price }}&euro;" rows="1"
           ngModel>
       </div>
       <div class="col">
-        <label for="discount" class="form-label">Discount</label>
+        <label for="discount" class="form-label text-body-emphasis">Discount</label>
         <input type="text" class="form-control" name="discount" id="discount" rows="1"
           value="{{ product?.discountPercentage }}&percnt;" ngModel>
       </div>
       <div class="col">
-        <label for="rating" class="form-label">Rating</label>
+        <label for="rating" class="form-label text-body-emphasis">Rating</label>
         <input type="text" class="form-control" name="rating" id="rating" rows="1" value="{{ product?.rating }}"
           ngModel>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="quantity" class="form-label">Quantity</label>
+        <label for="quantity" class="form-label text-body-emphasis">Quantity</label>
         <input type="text" class="form-control" name="quantity" id="quantity" value="{{ product?.stock }}" rows="1"
           ngModel>
       </div>
       <div class="col">
-        <label for="Brand" class="form-label">Brand</label>
+        <label for="Brand" class="form-label text-body-emphasis">Brand</label>
         <input type="text" class="form-control" name="Brand" id="Brand" value="{{ product?.brand }}" rows="1" ngModel>
       </div>
       <div class="col">
-        <label for="category" class="form-label">category</label>
+        <label for="category" class="form-label text-body-emphasis">category</label>
 
         <select class="form-select form-select-lg" name="" aria-label="Default select example" ngModel id="category">
           <option value="" disabled selected hidden>
@@ -64,12 +64,12 @@
         </select>
       </div>
     </div>
-    <label for="thumbnail" class="form-label">thumbnail</label>
+    <label for="thumbnail" class="form-label text-body-emphasis">thumbnail</label>
     <input type="text" class="form-control" name="thumbnail" id="thumbnail" value="{{ product?.thumbnail }}" rows="1"
       ngModel>
 
-    Images
-    <label for="images" class="form-label" *ngFor="let image of product?.images"></label>
+      <label for="images" class="form-label text-body-emphasis">Images</label>
+    <div  *ngFor="let image of product?.images"></div>
 
     <textarea class="form-control" name="images" id="images" value="{{ product?.images }}" rows="2"
       ngModel>{{ product?.images }}&nbsp;</textarea>
