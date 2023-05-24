@@ -10,14 +10,14 @@
 
 
             <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" routerLink="/products" aria-current="page">Products</a>
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/products" aria-current="page" i18n>Products</a>
             </li>
 
             <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" routerLink="/modify">Modify</a>
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/modify" i18n>Modify</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" routerLink="/users">Users</a>
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/users" i18n>Users</a>
             </li>
 
 
@@ -26,7 +26,7 @@
     </div>
    
         <mat-button-toggle-group name="theme" aria-label="Theme Selection" [value]="myTheme">
-          <mat-button-toggle value="light" (click)="onSwitchLight()">Light</mat-button-toggle>
-          <mat-button-toggle value="dark" (click)="onSwitchDark()">Dark</mat-button-toggle>
+          <mat-button-toggle value="light" (click)="onSwitchLight()" i18n>Light</mat-button-toggle>
+          <mat-button-toggle value="dark" (click)="onSwitchDark()" i18n>Dark</mat-button-toggle>
         </mat-button-toggle-group>
 </nav>

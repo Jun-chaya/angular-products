@@ -11,7 +11,7 @@
           <div class="row" id="row1">
             <div class="col">
               <mat-form-field>
-                <mat-label>Position</mat-label>
+                <mat-label i18n>Position</mat-label>
                 <input matInput type="number" min="1" max="{{dataSource!.data.length}}" [(ngModel)]="idb" class="form">
               </mat-form-field>
             </div>
@@ -27,14 +27,14 @@
 
             <div class="col">
               <mat-form-field>
-                <mat-label>firstName</mat-label>
+                <mat-label i18n>firstName</mat-label>
                 <input matInput [(ngModel)]="firstName" class="form">
               </mat-form-field>
             </div>
 
             <div class="col">
               <mat-form-field>
-                <mat-label>lastName</mat-label>
+                <mat-label i18n>lastName</mat-label>
                 <input matInput [(ngModel)]="lastName" class="form">
               </mat-form-field>
             </div>
@@ -53,7 +53,7 @@
 
           <div class="row" id="row3">
             <mat-form-field class="mat-form-field">
-              <input matInput #filter (keyup)="applyFilter(filter.value)" placeholder="Filter">
+              <input matInput #filter (keyup)="applyFilter(filter.value)" i18n-placeholder placeholder="Filter">
             </mat-form-field>
 
           </div>

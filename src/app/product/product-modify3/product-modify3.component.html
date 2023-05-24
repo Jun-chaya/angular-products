@@ -1,7 +1,7 @@
 <main class="container " >
     <div class="row" >
         <div class="col">
-            <p class="text-body-emphasis">Selecciona el ID del producto a borrar</p>
+            <p class="text-body-emphasis" i18n>Select ID that will be deleted</p>
             <label for="id" class="form-label"></label>
         </div>
         <div class="col">
@@ -12,11 +12,11 @@
                 (click)="goDeleteProduct(id1.valueAsNumber)">Borrar</button>
         </div>
     </div>
-    <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+    <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert" i18n>
         <strong>Success</strong> Alert.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <div *ngIf="success==false" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div *ngIf="success==false" class="alert alert-danger alert-dismissible fade show" role="alert" i18n>
         <strong>Error</strong> Alert.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>

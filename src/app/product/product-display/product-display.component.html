@@ -7,7 +7,7 @@
     <nav class="d-flex p-2 justify-content-around">
       <div class="dropdown d-flex">
         <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis " type="button" id="triggerId" data-bs-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+          aria-haspopup="true" aria-expanded="false" i18n>
           Filter by Category
         </button>
         <div class="dropdown-menu" aria-labelledby="triggerId">
@@ -22,7 +22,7 @@
 
 
         <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis" type="button"
-          id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" i18n>
           Filter by Price
         </button>
         <div class="dropdown-menu" aria-labelledby="triggerId">
@@ -39,13 +39,13 @@
           <a class="dropdown-item" (click)="filterByPrice(200, 9999999)">
             200&euro;&plus;</a>
         </div>
-        <button name="Reset" class="btn btn-primary" id="reset" (click)="goGetProductsPaginated()">Clear
+        <button name="Reset" class="btn btn-primary" id="reset" (click)="goGetProductsPaginated()" i18n>Clear
           Filters</button>
       </div>
 
       <form class="d-flex" role="search">
-        <input #searchBox class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" (click)="search(searchBox.value)">
+        <input #searchBox class="form-control me-2" type="search" i18n-placeholder placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" (click)="search(searchBox.value)" i18n>
           Search
         </button>
       </form>
@@ -67,7 +67,7 @@
 
 
 
-          <p id="discount" class="card-text text-body-emphasis">{{ product.discountPercentage }}% off</p>
+          <p id="discount" class="card-text text-body-emphasis">{{ product.discountPercentage }}%<span i18n> off</span></p>
           <p id="oldPrice" class="card-text">{{ product.price }}&euro;</p>
           <p id="newPrice" class="card-text text-body-emphasis"> {{ aplicaDescuento(product) }}&euro;</p>
         </div>

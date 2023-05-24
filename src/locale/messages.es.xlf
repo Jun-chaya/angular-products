@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2404027535283005782" datatype="html">
+        <source> &quot;Unleash your shopping potential at Brand name. Discover top-notch products,
+          unbeatable deals, and exceptional customer service. Shop with confidence and convenience.
+          Stay tuned for exciting updates and exclusive offers. Elevate your shopping experience
+          today!&quot; </source>
+
+        <target> &quot;Desbloquea todo tu potencial como consumidor en Brand name. Descubre
+          productos tope de gama, ofertas insuperables y un servicio al consumidor excepcional .
+          Compra con seguridad y conveniencia. Mantente al tanto para ofertas exclusivas y
+          actualizaciones increibles. ¡Eleva tu experiencia de compra hoy!&quot; </target>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">4,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2501489806101473286" datatype="html">
+        <source>About us</source>
+        <target>Acerca de nosotros</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7922989125096435449" datatype="html">
+        <source>Contact</source>
+        <target>Contactanos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2826581353496868063" datatype="html">
+        <source>Language</source>
+        <target>Lenguaje</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6707361102856436710" datatype="html">
+        <source>Products</source>
+        <target>Productos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3251759404563225821" datatype="html">
+        <source>Modify</source>
+        <target>Modificar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify-main/product-modify-main.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4555457172864212828" datatype="html">
+        <source>Users</source>
+        <target>Usuarios</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="413116577994876478" datatype="html">
+        <source>Light</source>
+        <target>Claro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3892161059518616136" datatype="html">
+        <source>Dark</source>
+        <target>Oscuro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navbar/navbar.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6870508495000790486" datatype="html">
+        <source> Filter by Category </source>
+        <target> Filtro por Categoria </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-display/product-display.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4926705288832789657" datatype="html">
+        <source> Filter by Price </source>
+        <target> Filtro por Precio </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-display/product-display.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4359014576353578997" datatype="html">
+        <source>Clear Filters</source>
+        <target>Limpiar Filtros</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-display/product-display.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4580988005648117665" datatype="html">
+        <source>Search</source>
+        <target>Buscar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-display/product-display.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2212695292809375179" datatype="html">
+        <source> Search </source>
+        <target> Buscar </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-display/product-display.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7199079713847021" datatype="html">
+        <source> off</source>
+        <target> de descuento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-display/product-display.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1036293388009089826" datatype="html">
+        <source> Welcome! &lt; User &gt;</source>
+        <target> ¡Bienvenido! &lt; Usuario &gt;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-landing-page/product-landing-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9155980987704252440" datatype="html">
+        <source>Handpicked categories based on your interests</source>
+        <target>Categorias seleccionadas basado en tus intereses</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-landing-page/product-landing-page.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2569033387018394820" datatype="html">
+        <source> Product Management</source>
+        <target> Manejo de Productos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify-main/product-modify-main.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3249513483374643425" datatype="html">
+        <source>Add</source>
+        <target>Añadir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify-main/product-modify-main.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7022070615528435141" datatype="html">
+        <source>Delete</source>
+        <target>Borrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify-main/product-modify-main.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7523608844799452060" datatype="html">
+        <source>Select ID that will be deleted</source>
+        <target>Selecciona el ID que sera borrado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify3/product-modify3.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4323697680084444052" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Success<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> Alert. <x
+            id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Exito<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> Alerta. <x
+            id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify3/product-modify3.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="985756552282219262" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Error<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> Alert. <x
+            id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Error<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> Alerta. <x
+            id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify3/product-modify3.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="991828318697296422" datatype="html">
+        <source>Product ID</source>
+        <target>ID de Producto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6516989012970314880" datatype="html">
+        <source>Product Title</source>
+        <target>Nombre Producto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8965461446409355462" datatype="html">
+        <source>Product Description</source>
+        <target>Descripción Producto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8894377483833272091" datatype="html">
+        <source>Price</source>
+        <target>Precio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4808411315981120788" datatype="html">
+        <source>Discount</source>
+        <target>Descuento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3706222784708785028" datatype="html">
+        <source>Rating</source>
+        <target>Puntuación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6762504134540024018" datatype="html">
+        <source>Quantity</source>
+        <target>Cantidad</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2559885490456050359" datatype="html">
+        <source>Brand</source>
+        <target>Marca</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1806667489382256324" datatype="html">
+        <source>Category</source>
+        <target>Categoria</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="919133713232396432" datatype="html">
+        <source>thumbnail</source>
+        <target>miniatura</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="414887388288176527" datatype="html">
+        <source>Images</source>
+        <target>Imagenes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2592690450389009216" datatype="html">
+        <source> Update </source>
+        <target> Actualizar </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">78,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7941428823403788384" datatype="html">
+        <source> Create </source>
+        <target> Crear </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">82,84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="864305947702536081" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Success<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> The product <x
+            id="INTERPOLATION" equiv-text="{{product?.id}}" /> has been added/modified. <x
+            id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Exito<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> El producto <x
+            id="INTERPOLATION" equiv-text="{{product?.id}}" /> ha sido añadido/modificado. <x
+            id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">89,90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="734561946969407955" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Error<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> The object could
+          not be added/modified <x id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" />Error<x
+            id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" /> El objeto no pudo
+          ser añadido modificado <x id="START_TAG_BUTTON" ctype="x-button"
+            equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;" /><x
+            id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;" /></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/product/product-modify/product-modify.component.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1172866303261737245" datatype="html">
+        <source>Position</source>
+        <target>Posición</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user-table-view/user-table-view.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3524515557222146955" datatype="html">
+        <source>firstName</source>
+        <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user-table-view/user-table-view.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1908417291315323180" datatype="html">
+        <source>lastName</source>
+        <target>Apellido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user-table-view/user-table-view.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8829497237648100098" datatype="html">
+        <source>Filter</source>
+        <target>Filtro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user-table-view/user-table-view.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
