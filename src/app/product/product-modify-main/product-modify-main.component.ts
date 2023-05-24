@@ -4,7 +4,7 @@ import { ProductDisplayComponent } from '../product-display/product-display.comp
 @Component({
   selector: 'app-product-modify-main',
   templateUrl: './product-modify-main.component.html',
-  styleUrls: ['./product-modify-main.component.css'],
+  styleUrls: ['./product-modify-main.component.scss'],
 })
 export class ProductModifyMainComponent extends ProductDisplayComponent{
  

@@ -1,4 +1,4 @@
-<main >
+<main>
 
   <div class="mat-app-background basic-container">
     <h1>User List</h1>
@@ -63,37 +63,39 @@
         <mat-spinner *ngIf="isDataLoaded$ && !isDataLoaded$.closed"></mat-spinner>
 
         <div *ngIf="isDataLoaded$ && isDataLoaded$.closed">
-          <mat-table [dataSource]="dataSource" matSort>
+          <section>
+            <table mat-table [dataSource]="dataSource" matSort>
 
-            <ng-container matColumnDef="id">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
-            </ng-container>
-
-
-            <ng-container matColumnDef="firstName">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> firstName </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{row.firstName}} </mat-cell>
-            </ng-container>
+              <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+              </ng-container>
 
 
-            <ng-container matColumnDef="lastName">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> lastName </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
-            </ng-container>
+              <ng-container matColumnDef="firstName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> firstName </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.firstName}} </mat-cell>
+              </ng-container>
 
-            <!-- email Column -->
-            <ng-container matColumnDef="email">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
-            </ng-container>
 
-            <mat-header-row *matHeaderRowDef="displayedcolumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedcolumns;">
-            </mat-row>
-          </mat-table>
+              <ng-container matColumnDef="lastName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> lastName </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
+              </ng-container>
 
-          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+              <!-- email Column -->
+              <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedcolumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedcolumns;">
+              </mat-row>
+            </table>
+             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+          </section>
+         
         </div>
       </div>
     </div>

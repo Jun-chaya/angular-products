@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-product-modify',
   templateUrl: './product-modify.component.html',
-  styleUrls: ['./product-modify.component.css'],
+  styleUrls: ['./product-modify.component.scss'],
 })
 export class ProductModifyComponent extends ProductDisplayComponent {
   product?: product;

@@ -24,5 +24,9 @@
         </ul>
         
     </div>
-<button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" (click)="onSwitch()" autocomplete="off">Button</button>
+   
+        <mat-button-toggle-group name="theme" aria-label="Theme Selection" [value]="myTheme">
+          <mat-button-toggle value="light" (click)="onSwitchLight()">Light</mat-button-toggle>
+          <mat-button-toggle value="dark" (click)="onSwitchDark()">Dark</mat-button-toggle>
+        </mat-button-toggle-group>
 </nav>

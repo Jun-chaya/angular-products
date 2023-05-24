@@ -6,7 +6,7 @@ import { ProductDisplayComponent } from '../product-display/product-display.comp
 @Component({
   selector: 'app-product-modify3',
   templateUrl: './product-modify3.component.html',
-  styleUrls: ['./product-modify3.component.css'],
+  styleUrls: ['./product-modify3.component.scss'],
 })
 export class ProductModify3Component extends ProductDisplayComponent {
   product: product | undefined;

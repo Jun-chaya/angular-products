@@ -24,7 +24,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +53,7 @@ import { FooterComponent } from './footer/footer.component';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatCardModule,
+    MatButtonToggleModule,
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],

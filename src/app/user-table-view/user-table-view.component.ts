@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, inject, Inject } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTable } from '@angular/material/table';
@@ -7,11 +7,13 @@ import { UserService } from '../services/user-service/user.service';
 import { delay } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
+import { DarkModeService } from '../services/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-user-table-view',
   templateUrl: './user-table-view.component.html',
-  styleUrls: ['./user-table-view.component.css'],
+  styleUrls: ['./user-table-view.component.scss'],
 })
 export class UserTableViewComponent implements OnInit {
   isDataLoaded$: Subscription;
@@ -24,14 +26,21 @@ export class UserTableViewComponent implements OnInit {
   email: string;
   idb: number;
 
+  private static readonly DARK_THEME_CLASS = 'dark-theme';
+
+  public theme: string;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<User>;
 
   constructor(
     protected UserService: UserService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private DarkModeService: DarkModeService,
+    @Inject(DOCUMENT) private document: Document
   ) {
+    
     this.isDataLoaded$ = this.UserService.GetAllUsers().subscribe(
       (allUsers) => {
         this.users.push(...allUsers.users);
@@ -48,6 +57,25 @@ export class UserTableViewComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.DarkModeService.getTheme().subscribe({
+      next: (theme) => {
+        this.theme = theme;
+        if (this.theme == 'light') {
+          this.document.documentElement.classList.remove(
+            UserTableViewComponent.DARK_THEME_CLASS
+          );
+        } else {
+          this.document.documentElement.classList.add(
+            UserTableViewComponent.DARK_THEME_CLASS
+          );
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+      complete: () => {},
+    });
+
     setTimeout(() => {
       this.dataSource = new MatTableDataSource<User>(this.users);
     }, 100);
@@ -105,5 +133,17 @@ export class UserTableViewComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
+  }
+
+  public selectDarkTheme(): void {
+    this.document.documentElement.classList.add(
+      UserTableViewComponent.DARK_THEME_CLASS
+    );
+  }
+
+  public selectLightTheme(): void {
+    this.document.documentElement.classList.remove(
+      UserTableViewComponent.DARK_THEME_CLASS
+    );
   }
 }

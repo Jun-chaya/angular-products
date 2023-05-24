@@ -9,7 +9,7 @@ import { DarkModeService } from 'src/app/services/dark-mode/dark-mode.service';
 @Component({
   selector: 'app-product-display',
   templateUrl: './product-display.component.html',
-  styleUrls: ['./product-display.component.css'],
+  styleUrls: ['./product-display.component.scss'],
 })
 export class ProductDisplayComponent implements OnInit {
   id: number = 0;
