@@ -7,7 +7,7 @@ import { DarkModeService } from '../services/dark-mode/dark-mode.service';
 })
 export class FooterComponent implements OnInit {
   myTheme: string;
-  constructor(private DarkModeService : DarkModeService){}
+  constructor(private DarkModeService: DarkModeService) {}
   ngOnInit(): void {
     if (
       this.DarkModeService.getTheme().subscribe(

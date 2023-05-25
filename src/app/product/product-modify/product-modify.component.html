@@ -10,8 +10,9 @@
             class="form-control " id="id" name="id" min="1" max="{{totalProducts.length}}" (ngModel)="formProduct!.id">
         </div>
         <ng-template #update>
-          <input #idProd type="number" value="{{ product?.id }}" placeholder="101" (change)="productFromId(idProd.valueAsNumber)"
-            class="form-control" id="id" name="id" min="101" max="101" (ngModel)="formProduct!.id">
+          <input #idProd type="number" value="{{ product?.id }}" placeholder="101"
+            (change)="productFromId(idProd.valueAsNumber)" class="form-control" id="id" name="id" min="101" max="101"
+            (ngModel)="formProduct!.id">
         </ng-template>
       </div>
       <div class="col">
@@ -21,7 +22,8 @@
     </div>
     <div class="row">
       <div class="col">
-        <label for="description" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.PRODUCTDESCRIPTION' | translate}}</label>
+        <label for="description" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.PRODUCTDESCRIPTION' |
+          translate}}</label>
         <input type="text" class="form-control" name="description" id="description" rows="2" maxlength="200"
           value="{{ product?.description }}" ngModel>
       </div>
@@ -68,8 +70,8 @@
     <input type="text" class="form-control" name="thumbnail" id="thumbnail" value="{{ product?.thumbnail }}" rows="1"
       ngModel>
 
-      <label for="images" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.IMAGES' | translate}}</label>
-    <div  *ngFor="let image of product?.images"></div>
+    <label for="images" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.IMAGES' | translate}}</label>
+    <div *ngFor="let image of product?.images"></div>
 
     <textarea class="form-control" name="images" id="images" value="{{ product?.images }}" rows="2"
       ngModel>{{ product?.images }}&nbsp;</textarea>
@@ -80,7 +82,7 @@
       </button>
     </div>
     <ng-template #elseBlock> <button type="submit" class="btn btn-primary" (click)="anadeObjeto(product?.id!)">
-      {{'PRODUCT.MODIFY.CREATE' | translate}}
+        {{'PRODUCT.MODIFY.CREATE' | translate}}
       </button></ng-template>
   </div>
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product-service/product.service';
-import { allProduct, product } from '../../model/product';
-import { ProductSearchComponent } from '../product-search/product-search.component';
+import { product } from '../../model/product';
 import { __await } from 'tslib';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -109,8 +108,7 @@ export class ProductDisplayComponent implements OnInit {
   }
 
   search(term: string) {
-    let productSearch = new ProductSearchComponent(this.ProductService);
-    this.isDataLoaded$ = productSearch.search(term).subscribe({
+    this.isDataLoaded$ = this.ProductService.searchProducts(term).subscribe({
       next: (allProducts) => (this.products = allProducts.products),
       error: (err) => console.error('Error in Search', err),
       complete: () => console.log('Completed Search'),

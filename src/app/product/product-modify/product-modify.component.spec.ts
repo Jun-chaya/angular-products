@@ -8,9 +8,8 @@ describe('ProductModifyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductModifyComponent ]
-    })
-    .compileComponents();
+      declarations: [ProductModifyComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProductModifyComponent);
     component = fixture.componentInstance;
@@ -21,4 +20,3 @@ describe('ProductModifyComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

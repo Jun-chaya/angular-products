@@ -47,7 +47,8 @@
             </div>
 
             <div class="col">
-              <button class="button-add-row" mat-stroked-button (click)="addUser()">{{'USER.ADDUSER' | translate}}</button>
+              <button class="button-add-row" mat-stroked-button (click)="addUser()">{{'USER.ADDUSER' |
+                translate}}</button>
             </div>
           </div>
 
@@ -83,7 +84,7 @@
                 <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
               </ng-container>
 
-              
+
               <ng-container matColumnDef="email">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
                 <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
@@ -93,9 +94,9 @@
               <mat-row *matRowDef="let row; columns: displayedcolumns;">
               </mat-row>
             </table>
-             <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
           </section>
-         
+
         </div>
       </div>
     </div>
