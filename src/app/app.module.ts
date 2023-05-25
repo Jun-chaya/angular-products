@@ -60,11 +60,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     MatButtonToggleModule,
     MatButtonModule,
     HttpClientModule,
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
     }),
@@ -74,6 +73,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
