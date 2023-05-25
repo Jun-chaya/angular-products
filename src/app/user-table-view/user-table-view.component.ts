@@ -56,35 +56,6 @@ export class UserTableViewComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.theme = document.documentElement.getAttribute('data-bs-theme');
-    if (this.theme == 'light') {
-      this.document.documentElement.classList.remove(
-        UserTableViewComponent.DARK_THEME_CLASS
-      );
-    } else {
-      this.document.documentElement.classList.add(
-        UserTableViewComponent.DARK_THEME_CLASS
-      );
-    }
-    this.DarkModeService.getTheme().subscribe({
-      next: (theme) => {
-        this.theme = theme;
-        if (this.theme == 'light') {
-          this.document.documentElement.classList.remove(
-            UserTableViewComponent.DARK_THEME_CLASS
-          );
-        } else {
-          this.document.documentElement.classList.add(
-            UserTableViewComponent.DARK_THEME_CLASS
-          );
-        }
-      },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {},
-    });
-
     setTimeout(() => {
       this.dataSource = new MatTableDataSource<User>(this.users);
     }, 100);

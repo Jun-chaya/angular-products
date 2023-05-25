@@ -80,7 +80,7 @@
       <ul class="pagination justify-content-center pagination-lg rounded">
         <li class="page-item" *ngFor="let product of totalProducts| slice:0:10  ; let i = index ">
           <div>
-            <a class="page-link" href="/products/{{i+1}}">{{i+1}}</a>
+            <a class="page-link" [routerLink]="['/products',i+1]" (click)="goGetProductsPaginated()">{{i+1}}</a>
            </div> 
         </li>
       </ul>
