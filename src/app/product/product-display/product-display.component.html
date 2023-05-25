@@ -1,14 +1,14 @@
-<main id="fondo" class="bg-body" [attr.data-bs-theme]="myTheme">
+<main id="fondo" class="bg-body" >
 
   <mat-spinner *ngIf="isDataLoaded$ && !isDataLoaded$.closed"></mat-spinner>
 
   <div *ngIf="isDataLoaded$ && isDataLoaded$.closed">
 
-    <nav class="d-flex p-2 justify-content-around">
-      <div class="dropdown d-flex">
-        <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis " type="button" id="triggerId" data-bs-toggle="dropdown"
+    <nav class="d-flex p-2 mx-5">
+      <div class="dropdown ">
+        <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis mx-3 " type="button" id="triggerId" data-bs-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Filter by Category
+          {{'PRODUCT.DISPLAY.FILTERBYCATEGORY' | translate}}
         </button>
         <div class="dropdown-menu" aria-labelledby="triggerId">
           <div *ngFor="let category of categories">
@@ -21,9 +21,9 @@
 
 
 
-        <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis" type="button"
+        <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis  mx-3 " type="button"
           id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Filter by Price
+          {{'PRODUCT.DISPLAY.FILTERBYPRICE' | translate}}
         </button>
         <div class="dropdown-menu" aria-labelledby="triggerId">
           <a class="dropdown-item" (click)="filterByPrice(0, 15)">
@@ -39,14 +39,15 @@
           <a class="dropdown-item" (click)="filterByPrice(200, 9999999)">
             200&euro;&plus;</a>
         </div>
-        <button name="Reset" class="btn btn-primary" id="reset" (click)="goGetProductsPaginated()">Clear
-          Filters</button>
+        <button name="Reset" class="btn btn-primary  mx-3 " id="reset" (click)="goGetProductsPaginated()">
+          {{'PRODUCT.DISPLAY.CLEARFILTERS' | translate}}
+        </button>
       </div>
 
-      <form class="d-flex" role="search">
-        <input #searchBox class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      <form class="d-flex ms-auto" role="search">
+        <input #searchBox class="form-control me-2" type="search" placeholder="{{'PRODUCT.DISPLAY.SEARCH' | translate}}" aria-label="Search" />
         <button class="btn btn-outline-success" (click)="search(searchBox.value)">
-          Search
+          {{'PRODUCT.DISPLAY.SEARCH' | translate}}
         </button>
       </form>
     </nav>
@@ -67,7 +68,7 @@
 
 
 
-          <p id="discount" class="card-text text-body-emphasis">{{ product.discountPercentage }}% off</p>
+          <p id="discount" class="card-text text-body-emphasis">{{ product.discountPercentage }}{{'PRODUCT.DISPLAY.PERCENTOFF' | translate}}</p>
           <p id="oldPrice" class="card-text">{{ product.price }}&euro;</p>
           <p id="newPrice" class="card-text text-body-emphasis"> {{ aplicaDescuento(product) }}&euro;</p>
         </div>

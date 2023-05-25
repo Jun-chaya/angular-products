@@ -1,27 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { DarkModeService } from '../services/dark-mode/dark-mode.service';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(private DarkModeService: DarkModeService) {
+  public myTheme: string;
+  constructor(
+    private DarkModeService: DarkModeService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('en');
+    translate.use('es');
     this.DarkModeService.getTheme().subscribe(
       (theme) => (this.myTheme = theme)
     );
   }
-  myTheme: string;
-  onSwitchLight(): void{
+  
+  onSwitchLight(): void {
     this.DarkModeService.setTheme('light');
-    this.DarkModeService.getTheme().subscribe(
-      (data) => (this.myTheme = data))
+    this.DarkModeService.getTheme().subscribe((data) => (this.myTheme = data));
+
+     document.documentElement.setAttribute('data-bs-theme', 'light')
   }
 
-   onSwitchDark(): void{
+  onSwitchDark(): void {
     this.DarkModeService.setTheme('dark');
-    this.DarkModeService.getTheme().subscribe(
-      (data) => (this.myTheme = data))
+    this.DarkModeService.getTheme().subscribe((data) => (this.myTheme = data));
+    
+    document.documentElement.setAttribute('data-bs-theme', 'dark')
   }
- 
+  useLanguage(language: string): void {
+    this.translate.use(language);
+  }
 }

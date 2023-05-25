@@ -1,7 +1,7 @@
-<nav class="navbar sticky-top navbar-expand-lg bg-body-secondary" [attr.data-bs-theme]="myTheme">
-    <a class="navbar-brand" href="#">Brand name</a>
+<nav class="navbar sticky-top navbar-expand-lg bg-body-secondary">
+    <a class="navbar-brand" href="/home">Brand name</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse"
-        aria-expanded="false" aria-label="Toggle navigation" >
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
 
     </button>
@@ -10,23 +10,36 @@
 
 
             <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" routerLink="/products" aria-current="page">Products</a>
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/products" aria-current="page"> {{'NAVBAR.PRODUCTS'
+                    | translate}}</a>
             </li>
 
             <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" routerLink="/modify">Modify</a>
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/modify">{{'NAVBAR.MODIFY' | translate}}</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" routerLink="/users">Users</a>
+                <a class="nav-link" data-bs-toggle="tab" routerLink="/users">{{'NAVBAR.USERS' | translate}}</a>
             </li>
 
 
         </ul>
-        
+
     </div>
-   
-        <mat-button-toggle-group name="theme" aria-label="Theme Selection" [value]="myTheme">
-          <mat-button-toggle value="light" (click)="onSwitchLight()">Light</mat-button-toggle>
-          <mat-button-toggle value="dark" (click)="onSwitchDark()">Dark</mat-button-toggle>
-        </mat-button-toggle-group>
+    <mat-button-toggle-group name="theme" aria-label="Theme Selection">
+        <mat-button-toggle value="light" (click)="onSwitchLight()">{{'NAVBAR.LIGHT' | translate}}</mat-button-toggle>
+        <mat-button-toggle value="dark" (click)="onSwitchDark()">{{'NAVBAR.DARK' | translate}}</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <button class="btn btn-secondary dropdown-toggle bg-body-secondary text-body-emphasis  mx-3" type="button"
+        id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{'FOOTER.LANGUAGE' | translate}}
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="triggerId">
+        <a class="dropdown-item" (click)="useLanguage('es')">es_🇪🇸</a>
+        <a class="dropdown-item" (click)="useLanguage('en')">en_🇺🇸</a>
+    </div>
+
+
+
 </nav>

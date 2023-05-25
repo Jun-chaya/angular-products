@@ -1,7 +1,7 @@
 <main>
 
   <div class="mat-app-background basic-container">
-    <h1>User List</h1>
+    <h1>{{'USER.USER_LIST' | translate}}</h1>
     <div class="header">
 
       <div class="example-container mat-elevation-z8">
@@ -11,13 +11,13 @@
           <div class="row" id="row1">
             <div class="col">
               <mat-form-field>
-                <mat-label>Position</mat-label>
+                <mat-label>{{'USER.POSITION' | translate}}</mat-label>
                 <input matInput type="number" min="1" max="{{dataSource!.data.length}}" [(ngModel)]="idb" class="form">
               </mat-form-field>
             </div>
             <div class="col">
               <button mat-stroked-button (click)="removeData(idb)" class="demo-button">
-                Remove User
+                {{'USER.REMOVE' | translate}}
               </button>
             </div>
           </div>
@@ -27,33 +27,33 @@
 
             <div class="col">
               <mat-form-field>
-                <mat-label>firstName</mat-label>
+                <mat-label>{{'USER.FIRSTNAME' | translate}}</mat-label>
                 <input matInput [(ngModel)]="firstName" class="form">
               </mat-form-field>
             </div>
 
             <div class="col">
               <mat-form-field>
-                <mat-label>lastName</mat-label>
+                <mat-label>{{'USER.LASTNAME' | translate}}</mat-label>
                 <input matInput [(ngModel)]="lastName" class="form">
               </mat-form-field>
             </div>
 
             <div class="col">
               <mat-form-field>
-                <mat-label>email</mat-label>
+                <mat-label>Email</mat-label>
                 <input matInput type="email" [(ngModel)]="email" class="form">
               </mat-form-field>
             </div>
 
             <div class="col">
-              <button class="button-add-row" mat-stroked-button (click)="addUser()">Add User</button>
+              <button class="button-add-row" mat-stroked-button (click)="addUser()">{{'USER.ADDUSER' | translate}}</button>
             </div>
           </div>
 
           <div class="row" id="row3">
             <mat-form-field class="mat-form-field">
-              <input matInput #filter (keyup)="applyFilter(filter.value)" placeholder="Filter">
+              <input matInput #filter (keyup)="applyFilter(filter.value)" placeholder="{{'USER.FILTER' | translate}}">
             </mat-form-field>
 
           </div>
@@ -73,19 +73,19 @@
 
 
               <ng-container matColumnDef="firstName">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> firstName </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> {{'USER.FIRSTNAME' | translate}} </mat-header-cell>
                 <mat-cell *matCellDef="let row"> {{row.firstName}} </mat-cell>
               </ng-container>
 
 
               <ng-container matColumnDef="lastName">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> lastName </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>{{'USER.LASTNAME' | translate}} </mat-header-cell>
                 <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
               </ng-container>
 
               <!-- email Column -->
               <ng-container matColumnDef="email">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
                 <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
               </ng-container>
 

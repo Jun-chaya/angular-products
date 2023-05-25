@@ -1,0 +1,62 @@
+{
+  "FOOTER": {
+    "TEXT": "\"Desbloquea todo tu potencial como consumidor en Brand name. Descubre productos tope de gama, ofertas insuperables y un servicio al consumidor excepcional. Compra con seguridad y conveniencia. Mantente al tanto para ofertas exclusivas y actualizaciones increibles. ¡Eleva tu experiencia de compra hoy!\"",
+    "ABOUT": "Acerca de nosotros",
+    "CONTACT": "Contactanos",
+    "LANGUAGE": "Lenguajes",
+    "COOKIES": "Cookies"
+  },
+  "NAVBAR": {
+    "PRODUCTS": "Productos",
+    "MODIFY": "Modificar",
+    "USERS": "Usuarios",
+    "LIGHT": "Claro",
+    "DARK": "Oscuro"
+  },
+  "USER": {
+    "USER_LIST": "Lista de usuarios",
+    "POSITION": "Posición",
+    "REMOVE":"Eliminar",
+    "FIRSTNAME": "Nombre",
+    "LASTNAME": "Apellido",
+    "ADDUSER": "Añadir Usuario",
+    "FILTER": "Filtro"
+  },
+  "PRODUCT": {
+    "DISPLAY": {
+      "FILTERBYCATEGORY": "Categoria",
+      "FILTERBYPRICE": "Precio",
+      "CLEARFILTERS": "Limpiar Filtros",
+      "SEARCH": "Buscar",
+      "PERCENTOFF": " % de descuento"
+    },
+    "LANDINGPAGE": {
+      "WELCOME": "Bienvenido Usuario",
+      "INTERESTS": "Categorias seleccionadas basado en tus intereses"
+    },
+    "MODIFY": {
+      "PRODUCTID": "ID de Producto",
+      "PRODUCTTITLE": "Nombre de Producto",
+      "PRODUCTDESCRIPTION": "Descripción de Producto",
+      "PRICE": "Precio",
+      "DISCOUNT": "Descuento",
+      "RATING": "Valoración",
+      "QUANTITY": "Cantidad",
+      "BRAND": "Marca",
+      "CATEGORY": "Categoria",
+      "THUMBNAIL": "Miniatura",
+      "IMAGES": "Imagenes",
+      "UPDATE": "Actualizar",
+      "CREATE": "Crear",
+      "SUCCESS": "<strong>Exito</strong> El producto {{product?.id}} ha sido añadido/modificado.",
+      "ERROR": "<strong>Error</strong> El product no pudo ser añadido/modificado",
+      "MANAGEMENT": "Gestionar Productos",
+      "MODIFY": "Modificar",
+      "DELETE": "Borrar",
+      "ADD": "Añadir",
+      "TXTDELETE": "Selecciona el producto que va a ser borrado",
+      "SUCCESS2": "<strong>Exito</strong> El producto pudo ser borrado.",
+      "ERROR2": "<strong>Error</strong> El producto no pudo ser borrado"
+    }
+  }
+}

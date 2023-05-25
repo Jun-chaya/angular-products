@@ -1,7 +1,7 @@
 <main class="container " >
     <div class="row" >
         <div class="col">
-            <p class="text-body-emphasis">Selecciona el ID del producto a borrar</p>
+            <p class="text-body-emphasis">{{'PRODUCT.MODIFY.TXTDELETE' | translate}}</p>
             <label for="id" class="form-label"></label>
         </div>
         <div class="col">
@@ -9,15 +9,15 @@
         </div>
         <div class="col">
             <button value="Borrar Objeto" class="btn btn-primary"
-                (click)="goDeleteProduct(id1.valueAsNumber)">Borrar</button>
+                (click)="goDeleteProduct(id1.valueAsNumber)">{{'PRODUCT.MODIFY.DELETE' | translate}}</button>
         </div>
     </div>
     <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Success</strong> Alert.
+        {{'PRODUCT.MODIFY.SUCCESS2' | translate}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <div *ngIf="success==false" class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error</strong> Alert.
+        {{'PRODUCT.MODIFY.ERROR2' | translate}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 

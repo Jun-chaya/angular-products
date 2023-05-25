@@ -1,9 +1,9 @@
-<main class="container bg-body" [attr.data-bs-theme]="myTheme">
+<main class="container bg-body">
 
   <div class="mb-3" class="form-group">
     <div class="row">
       <div class="col">
-        <label for="id" class="form-label text-body-emphasis">Product ID</label>
+        <label for="id" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.PRODUCTID' | translate}}</label>
 
         <div *ngIf="isUpdate;else update">
           <input #idProd type="number" value="{{ product?.id }}" (change)="productFromId(idProd.valueAsNumber)"
@@ -15,46 +15,46 @@
         </ng-template>
       </div>
       <div class="col">
-        <label for="title" class="form-label text-body-emphasis">Product Title</label>
+        <label for="title" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.PRODUCTTITLE' | translate}}</label>
         <input type="text" class="form-control" name="title" id="title" rows="1" value="{{ product?.title }}" ngModel>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="description" class="form-label text-body-emphasis">Product Description</label>
+        <label for="description" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.PRODUCTDESCRIPTION' | translate}}</label>
         <input type="text" class="form-control" name="description" id="description" rows="2" maxlength="200"
           value="{{ product?.description }}" ngModel>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="price" class="form-label text-body-emphasis">Price</label>
+        <label for="price" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.PRICE' | translate}}</label>
         <input type="text" class="form-control" name="price" id="price" value="{{ product?.price }}&euro;" rows="1"
           ngModel>
       </div>
       <div class="col">
-        <label for="discount" class="form-label text-body-emphasis">Discount</label>
+        <label for="discount" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.DISCOUNT' | translate}}</label>
         <input type="text" class="form-control" name="discount" id="discount" rows="1"
           value="{{ product?.discountPercentage }}&percnt;" ngModel>
       </div>
       <div class="col">
-        <label for="rating" class="form-label text-body-emphasis">Rating</label>
+        <label for="rating" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.RATING' | translate}}</label>
         <input type="text" class="form-control" name="rating" id="rating" rows="1" value="{{ product?.rating }}"
           ngModel>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="quantity" class="form-label text-body-emphasis">Quantity</label>
+        <label for="quantity" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.QUANTITY' | translate}}</label>
         <input type="text" class="form-control" name="quantity" id="quantity" value="{{ product?.stock }}" rows="1"
           ngModel>
       </div>
       <div class="col">
-        <label for="Brand" class="form-label text-body-emphasis">Brand</label>
+        <label for="Brand" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.BRAND' | translate}}</label>
         <input type="text" class="form-control" name="Brand" id="Brand" value="{{ product?.brand }}" rows="1" ngModel>
       </div>
       <div class="col">
-        <label for="category" class="form-label text-body-emphasis">category</label>
+        <label for="category" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.CATEGORY' | translate}}</label>
 
         <select class="form-select form-select-lg" name="" aria-label="Default select example" ngModel id="category">
           <option value="" disabled selected hidden>
@@ -64,11 +64,11 @@
         </select>
       </div>
     </div>
-    <label for="thumbnail" class="form-label text-body-emphasis">thumbnail</label>
+    <label for="thumbnail" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.THUMBNAIL' | translate}}</label>
     <input type="text" class="form-control" name="thumbnail" id="thumbnail" value="{{ product?.thumbnail }}" rows="1"
       ngModel>
 
-      <label for="images" class="form-label text-body-emphasis">Images</label>
+      <label for="images" class="form-label text-body-emphasis">{{'PRODUCT.MODIFY.IMAGES' | translate}}</label>
     <div  *ngFor="let image of product?.images"></div>
 
     <textarea class="form-control" name="images" id="images" value="{{ product?.images }}" rows="2"
@@ -76,22 +76,22 @@
 
     <div *ngIf="isUpdate ; else elseBlock">
       <button type="submit" class="btn btn-primary" (click)="goUpdateProduct(this.product!)">
-        Update
+        {{'PRODUCT.MODIFY.UPDATE' | translate}}
       </button>
     </div>
     <ng-template #elseBlock> <button type="submit" class="btn btn-primary" (click)="anadeObjeto(product?.id!)">
-        Create
+      {{'PRODUCT.MODIFY.CREATE' | translate}}
       </button></ng-template>
   </div>
 
 
   <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Success</strong> The product {{product?.id}} has been added/modified.
+    {{'PRODUCT.MODIFY.SUCCESS' | translate}}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
   <div *ngIf="success==false" class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>Error</strong> The object could not be added/modified 
+    {{'PRODUCT.MODIFY.ERROR' | translate}}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 

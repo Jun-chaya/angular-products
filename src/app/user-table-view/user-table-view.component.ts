@@ -28,7 +28,7 @@ export class UserTableViewComponent implements OnInit {
 
   private static readonly DARK_THEME_CLASS = 'dark-theme';
 
-  public theme: string;
+  public theme: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -40,7 +40,6 @@ export class UserTableViewComponent implements OnInit {
     private DarkModeService: DarkModeService,
     @Inject(DOCUMENT) private document: Document
   ) {
-    
     this.isDataLoaded$ = this.UserService.GetAllUsers().subscribe(
       (allUsers) => {
         this.users.push(...allUsers.users);
@@ -57,6 +56,16 @@ export class UserTableViewComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.theme = document.documentElement.getAttribute('data-bs-theme');
+    if (this.theme == 'light') {
+      this.document.documentElement.classList.remove(
+        UserTableViewComponent.DARK_THEME_CLASS
+      );
+    } else {
+      this.document.documentElement.classList.add(
+        UserTableViewComponent.DARK_THEME_CLASS
+      );
+    }
     this.DarkModeService.getTheme().subscribe({
       next: (theme) => {
         this.theme = theme;
@@ -133,17 +142,5 @@ export class UserTableViewComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
-  }
-
-  public selectDarkTheme(): void {
-    this.document.documentElement.classList.add(
-      UserTableViewComponent.DARK_THEME_CLASS
-    );
-  }
-
-  public selectLightTheme(): void {
-    this.document.documentElement.classList.remove(
-      UserTableViewComponent.DARK_THEME_CLASS
-    );
   }
 }
