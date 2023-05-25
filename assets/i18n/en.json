@@ -1,0 +1,62 @@
+{
+  "FOOTER": {
+    "TEXT": " \"Unleash your shopping potential at Brand name. Discover top-notch products,unbeatable deals, and exceptional customer service. Shop with confidence and convenience. Stay tuned for exciting updates and exclusive offers. Elevate your shopping experience today!\" ",
+    "ABOUT": "About us",
+    "CONTACT": "Contact",
+    "LANGUAGE": "Languages",
+    "COOKIES": "Cookies"
+  },
+  "NAVBAR": {
+    "PRODUCTS": "Products",
+    "MODIFY": "Modify",
+    "USERS": "Users",
+    "LIGHT": "Light",
+    "DARK": "Dark"
+  },
+  "USER": {
+    "USER_LIST": "User List",
+    "POSITION": "Position",
+    "REMOVE": "Remove",
+    "FIRSTNAME": "First Name",
+    "LASTNAME": "Last Name",
+    "ADDUSER": "Add User",
+    "FILTER": "Filter"
+  },
+  "PRODUCT": {
+    "DISPLAY": {
+      "FILTERBYCATEGORY": "Category",
+      "FILTERBYPRICE": "Price",
+      "CLEARFILTERS": "Clear Filters",
+      "SEARCH": "Search",
+      "PERCENTOFF": " % off"
+    },
+    "LANDINGPAGE": {
+      "WELCOME": "Welcome User",
+      "INTERESTS": "Handpicked categories based on your interests"
+    },
+    "MODIFY": {
+      "PRODUCTID": "Product ID",
+      "PRODUCTTITLE": "Product Title",
+      "PRODUCTDESCRIPTION": "Product Description",
+      "PRICE": "Price",
+      "DISCOUNT": "Discount",
+      "RATING": "Rating",
+      "QUANTITY": "Quantity",
+      "BRAND": "Brand",
+      "CATEGORY": "Category",
+      "THUMBNAIL": "Thumbnail",
+      "IMAGES": "Images",
+      "UPDATE": "Update",
+      "CREATE": "Create",
+      "SUCCESS": "<strong>Success</strong> The product {{product?.id}} has been added/modified.",
+      "ERROR": "<strong>Error</strong> The object could not be added/modified",
+      "MANAGEMENT": "Product Management",
+      "MODIFY": "Modify",
+      "DELETE": "Delete",
+      "ADD": "Add",
+      "TXTDELETE": "Select the product ID that will be deleted",
+      "SUCCESS2": "<strong>Success</strong> the product was deleted",
+      "ERROR2": "<strong>Error</strong> the product could not be deleted"
+    }
+  }
+}
